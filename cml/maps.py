@@ -1,3 +1,5 @@
+import colorednoise as cn
+
 def doublingMap(x,par):
     if x < 0.5:
         return 2.0 * x
@@ -42,3 +44,7 @@ def somMap(x, par):
         return (x - 0.8) / a + 1.0
     else:
         return (1.0 - x) / b
+    
+def onebyfMap(beta):
+    y = cn.powerlaw_psd_gaussian(beta, 1)
+    return y
