@@ -46,7 +46,7 @@ def somMap(x, par):
     else:
         return (1.0 - x) / b
     
-def onebyfMap(x, par):
+def onebyfMap(par):
     y = cn.powerlaw_psd_gaussian(par[0], 2)
     global cont
     print("x:")
