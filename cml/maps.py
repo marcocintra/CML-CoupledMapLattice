@@ -49,6 +49,10 @@ def somMap(x, par):
 def onebyfMap(x, par):
     y = cn.powerlaw_psd_gaussian(par[0], 2)
     global cont
+    print("x:")
+    print(x)
+    print("par[0]:")
+    print(par[0])
     print(cont)
     cont = cont + 1
     return y[0]
