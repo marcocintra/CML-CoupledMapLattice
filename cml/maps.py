@@ -1,5 +1,5 @@
 import colorednoise as cn
-global cont = 1
+global cont
 
 def doublingMap(x,par):
     if x < 0.5:
