@@ -34,7 +34,7 @@ def setMap(mapping):
 		par = [0.6,0.2]
 	elif(mapping=='onebyf'):
 		cmlMap = maps.onebyfMap
-		par = [extraArg]
+		par = sys.argv[-1]
 	else:
 		raise Exception('Unsupported map',mapping)
 	return cmlMap, par
