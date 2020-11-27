@@ -1,5 +1,5 @@
 import colorednoise as cn
-global cont
+cont = 1
 
 def doublingMap(x,par):
     if x < 0.5:
@@ -48,6 +48,7 @@ def somMap(x, par):
     
 def onebyfMap(x, par):
     y = cn.powerlaw_psd_gaussian(par[0], 2)
+    global cont
     print(cont)
     cont = cont + 1
     return y[0]
