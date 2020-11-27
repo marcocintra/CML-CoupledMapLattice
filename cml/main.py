@@ -35,6 +35,8 @@ def setMap(mapping):
 	elif(mapping=='onebyf'):
 		cmlMap = maps.onebyfMap
 		par = sys.argv[-1]
+		print("recebi o parâmetro certinho?:")
+		print(par)
 	else:
 		raise Exception('Unsupported map',mapping)
 	return cmlMap, par
