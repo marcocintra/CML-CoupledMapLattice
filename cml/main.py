@@ -32,6 +32,9 @@ def setMap(mapping):
 	elif(mapping=='SOM'):
 		cmlMap = maps.somMap
 		par = [0.6,0.2]
+	elif(mapping=='onebyf'):
+		cmlMap = maps.onebyf
+		par = [extraArg]
 	else:
 		raise Exception('Unsupported map',mapping)
 	return cmlMap, par
