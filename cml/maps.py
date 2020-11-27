@@ -45,6 +45,6 @@ def somMap(x, par):
     else:
         return (1.0 - x) / b
     
-def onebyfMap(beta):
+def onebyfMap(x, par):
     y = cn.powerlaw_psd_gaussian(beta, 1)
     return y
