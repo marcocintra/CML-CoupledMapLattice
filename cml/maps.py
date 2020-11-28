@@ -52,11 +52,11 @@ def onebyfMap(x, par):
     global cont
     #print("x:")
     #print(x)
-    #print("par:")
-    #print(par)
-    #print(type(par))
-    #print(cont)
-    #print("y[0]:")
-    #print(y[0])
+    print("par:")
+    print(par)
+    print("cont:")
+    print(cont)
+    print("y[0]:")
+    print(y[0])
     cont = cont + 1
     return y[0]
