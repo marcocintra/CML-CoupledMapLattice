@@ -50,13 +50,13 @@ def onebyfMap(x, par):
     par = int(par)
     y = cn.powerlaw_psd_gaussian(par, 2)
     global cont
-    print("x:")
-    print(x)
-    print("par:")
-    print(par)
-    print(type(par))
-    print(cont)
-    print("y[0]:")
-    print(y[0])
+    #print("x:")
+    #print(x)
+    #print("par:")
+    #print(par)
+    #print(type(par))
+    #print(cont)
+    #print("y[0]:")
+    #print(y[0])
     cont = cont + 1
     return y[0]
