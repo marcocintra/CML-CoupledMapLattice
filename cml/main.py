@@ -34,7 +34,7 @@ def setMap(mapping):
 		par = [0.6,0.2]
 	elif(mapping=='onebyf'):
 		cmlMap = maps.onebyfMap
-		par = int(sys.argv[-1])
+		par = sys.argv[-1]
 		print("recebi o parâmetro certinho?:")
 		print(par)
 	else:
