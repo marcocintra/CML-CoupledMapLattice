@@ -54,7 +54,7 @@ def onebyfMap(x, par):
     print("par:")
     print(par)
     print(cont)
-    print("y[0]:")
+    #print("y[0]:")
     print(y[0])
     cont = cont + 1
     #return y[0]
