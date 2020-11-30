@@ -44,9 +44,8 @@ def setMap(mapping):
 		print(par)
 		with open(par,'r') as i:
 			lines = i.readlines()
-		processedLines = manipulateData(lines)	
 		print("estou em main.py. li as linhas do 'ts' certinho?:")
-		print(processedLines)
+		print(lines)
 	else:
 		raise Exception('Unsupported map',mapping)
 	return cmlMap, par
