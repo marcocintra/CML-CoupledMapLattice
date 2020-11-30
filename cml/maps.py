@@ -78,4 +78,6 @@ def ts(x, par):
     print(cont)
     print("estou na função ts, em maps.py. vamos ver se recebi as linhas como parâmetro certinho. par[cont]:")
     print(par[cont])
+    print("type:")
+    print(type(par[cont]))
     return par[cont]
