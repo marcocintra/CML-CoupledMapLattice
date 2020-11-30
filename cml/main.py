@@ -41,7 +41,6 @@ def setMap(mapping):
 		cmlMap = maps.ts
 		#print("recebi o parâmetro do 'ts' certinho?:")
 		par = np.genfromtxt(dtype=f4, 'serie.csv', delimiter = ',')
-		par = par.
 		print("estou em main.py. li as linhas do 'ts' certinho?:")
 		print(par)
 	else:
