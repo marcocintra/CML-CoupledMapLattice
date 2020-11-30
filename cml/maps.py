@@ -1,5 +1,5 @@
 import colorednoise as cn
-cont = 1
+cont = 0
 
 def doublingMap(x,par):
     if x < 0.5:
@@ -72,4 +72,5 @@ def onebyfMap(x, par):
 def ts(x, par):
     print("estou na função ts, em maps.py. vamos ver se recebi as linhas como parâmetro certinho:")
     print(par)
-    return ts[0]
+    global cont
+    return par[cont]
