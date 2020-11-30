@@ -37,6 +37,11 @@ def setMap(mapping):
 		par = sys.argv[-1]
 		#print("recebi o parâmetro certinho?:")
 		print(par)
+	elif(mapping=='ts'):
+		cmlMap = maps.ts
+		par = sys.argv[-1]
+		print("recebi o parâmetro do 'ts' certinho?:")
+		print(par)
 	else:
 		raise Exception('Unsupported map',mapping)
 	return cmlMap, par
