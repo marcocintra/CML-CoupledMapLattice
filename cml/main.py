@@ -51,7 +51,7 @@ if __name__ == "__main__":
 		print('================================')
 		print('-d: display the last iteration of CML')
 		print('-mat <type> <matlen>: initial condition type(random, gaussian or bessel), matlen(>0)')
-		print('-map <map> <parameter>: type of map(logistic, som, doubling), parameter is required for logistic OR -ts to see on the next screen the instructions for entering a time series')
+		print('-map <map> <parameter>: type of map(logistic, som, doubling), parameter is required for logistic OR ts to insert a time series, followed by the file containing the time series in a .csv file, with: ((initial condition number * initial condition number) * number of iterations * 5)')
 		print('-nit <nit>: number of iterations')
 		print('-grad <x> <y>: save the gradient from x, y in gradientSeries.csv')
 		print('-c coupling: coupling factor(float)')
