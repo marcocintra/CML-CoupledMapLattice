@@ -12,6 +12,14 @@ def logisticMap(x, par):
         a = par[0]
     else:
         a = 4.0
+    global cont
+    print("par:")
+    print(par)
+    print("cont:")
+    print(cont)
+    print("y[0]:")
+    print(y[0])
+    cont = cont + 1
     return (a * x * (1.0 - x))
     
 def kanekoMap(x, par):
