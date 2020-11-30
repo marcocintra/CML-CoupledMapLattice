@@ -76,8 +76,11 @@ def ts(x, par):
     cont = cont + 1
     print("cont:")
     print(cont)
-    print("estou na função ts, em maps.py. vamos ver se recebi as linhas como parâmetro certinho. par[cont]:")
-    print(par[cont])
-    print("type:")
-    print(type(par[cont]))
-    return par[cont]
+    if((cont+1)<=(len(par[cont])):
+        print("estou na função ts, em maps.py. vamos ver se recebi as linhas como parâmetro certinho. par[cont]:")
+        print(par[cont])
+        print("type:")
+        print(type(par[cont]))
+        return par[cont]
+    else:
+       break
