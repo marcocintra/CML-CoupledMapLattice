@@ -20,6 +20,8 @@ def logisticMap(x, par):
     cont = cont + 1
     print("(a * x * (1.0 - x)):")
     print((a * x * (1.0 - x)))
+    print("type:")
+    print(type((a * x * (1.0 - x))))
     return (a * x * (1.0 - x))
     
 def kanekoMap(x, par):
