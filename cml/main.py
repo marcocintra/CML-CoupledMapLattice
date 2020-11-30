@@ -35,7 +35,7 @@ def setMap(mapping):
 	elif(mapping=='onebyf'):
 		cmlMap = maps.onebyfMap
 		par = sys.argv[-1]
-		print("recebi o parâmetro certinho?:")
+		#print("recebi o parâmetro certinho?:")
 		print(par)
 	else:
 		raise Exception('Unsupported map',mapping)
@@ -51,7 +51,7 @@ if __name__ == "__main__":
 		print('================================')
 		print('-d: display the last iteration of CML')
 		print('-mat <type> <matlen>: initial condition type(random, gaussian or bessel), matlen(>0)')
-		print('-map <map> <parameter>: type of map(logistic, som, doubling), parameter is required for logistic')
+		print('-map <map> <parameter>: type of map(logistic, som, doubling), parameter is required for logistic OR -ts to see on the next screen the instructions for entering a time series')
 		print('-nit <nit>: number of iterations')
 		print('-grad <x> <y>: save the gradient from x, y in gradientSeries.csv')
 		print('-c coupling: coupling factor(float)')
