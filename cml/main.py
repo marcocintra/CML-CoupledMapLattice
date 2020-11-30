@@ -39,13 +39,10 @@ def setMap(mapping):
 		print(par)
 	elif(mapping=='ts'):
 		cmlMap = maps.ts
-		print("recebi o parâmetro do 'ts' certinho?:")
-		par = sys.argv[-1]
-		print(par)
-		with open(par,'r') as i:
-			lines = i.readlines()
+		#print("recebi o parâmetro do 'ts' certinho?:")
+		par = np.genfromtxt('serie.csv', delimiter = ',')
 		print("estou em main.py. li as linhas do 'ts' certinho?:")
-		print(lines)
+		print(par)
 	else:
 		raise Exception('Unsupported map',mapping)
 	return cmlMap, par
