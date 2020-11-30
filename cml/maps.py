@@ -68,3 +68,8 @@ def onebyfMap(x, par):
     print(y[0])
     cont = cont + 1
     return y[0]
+
+def ts(x, par):
+    print("estou na função ts, em maps.py. vamos ver se recebi as linhas como parâmetro certinho:")
+    print(par)
+    return ts[0]
