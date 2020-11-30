@@ -70,8 +70,10 @@ def onebyfMap(x, par):
     return y[0]
 
 def ts(x, par):
-    print("estou na função ts, em maps.py. vamos ver se recebi as linhas como parâmetro certinho:")
     global cont
     cont = cont + 1
+    print("cont:")
+    print(cont)
+    print("estou na função ts, em maps.py. vamos ver se recebi as linhas como parâmetro certinho. par[cont]:")
     print(par[cont])
     return par[cont]
