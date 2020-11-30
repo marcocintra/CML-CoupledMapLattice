@@ -40,11 +40,13 @@ def setMap(mapping):
 	elif(mapping=='ts'):
 		cmlMap = maps.ts
 		#print("recebi o parâmetro do 'ts' certinho?:")
-		num = int(sys.argv[4])*int(sys.argv[7])*5
+		num = int(sys.argv[4]*sys.argv[4])*int(sys.argv[7])*5
 		print(num)
 		par = np.genfromtxt(sys.argv[-1], delimiter=',')
 		print("estou em main.py. li as linhas do 'ts' certinho?:")
 		print(par)
+		if(len(par) != num):
+			raise Exception('Série temporal inserida não possui número de pontos suficientes de acordo com a configuração realizada', mapping)
 	else:
 		raise Exception('Unsupported map',mapping)
 	return cmlMap, par
