@@ -44,7 +44,7 @@ def setMap(mapping):
 		inter = int(sys.argv[7])
 		num = inicial**2*inter*5
 		print(num)
-		par = np.genfromtxt(sys.argv[-1], delimiter=',')
+		par = np.genfromtxt(sys.argv[-1])
 		print("estou em main.py. li as linhas do 'ts' certinho?:")
 		print(par)
 		if(len(par) != num):
