@@ -75,7 +75,7 @@ if __name__ == "__main__":
 		print('================================')
 		exit()
 	
-	#initialMat,matLen,nit,mapping,coupling,neigh,output,nlyap = 'gaussian',128,50,'logistic',0.5,[(1,0),(0,1),(-1,0),(0,-1)],False, 100
+	initialMat,matLen,nit,mapping,coupling,neigh,output,nlyap = 'gaussian',128,50,'logistic',0.5,[(1,0),(0,1),(-1,0),(0,-1)],False, 100
 	extraArg = 4.0
 	for it in range(len(sys.argv)):
 		if(sys.argv[it] == '-mat'):
