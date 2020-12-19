@@ -37,21 +37,21 @@ def setMap(mapping):
 		par = sys.argv[-1]
 		#print("recebi o parâmetro certinho?:")
 		#print(par)
-	elif(mapping=='ts'):
-		cmlMap = maps.ts
-		#print("recebi o parâmetro do 'ts' certinho?:")
-		inicial = int(sys.argv[4])
-		inter = int(sys.argv[7])
-		num = inicial**2*inter*5
-		print("num:")
-		print(num)
-		par = np.genfromtxt(sys.argv[-1])
-		#print("estou em main.py. li as linhas do 'ts' certinho?:")
-		#print(par)
-		if(len(par) != num):
-			raise Exception('Série temporal inserida não possui número de pontos suficientes de acordo com a configuração realizada', mapping)
-	else:
-		raise Exception('Unsupported map',mapping)
+	#elif(mapping=='ts'):
+	#	cmlMap = maps.ts
+	#	#print("recebi o parâmetro do 'ts' certinho?:")
+	#	inicial = int(sys.argv[4])
+	#	inter = int(sys.argv[7])
+	#	num = inicial**2*inter*5
+	#	print("num:")
+	#	print(num)
+	#	par = np.genfromtxt(sys.argv[-1])
+	#	#print("estou em main.py. li as linhas do 'ts' certinho?:")
+	#	#print(par)
+	#	if(len(par) != num):
+	#		raise Exception('Série temporal inserida não possui número de pontos suficientes de acordo com a configuração realizada', mapping)
+	#else:
+	#	raise Exception('Unsupported map',mapping)
 	return cmlMap, par
 
 if __name__ == "__main__":
@@ -64,7 +64,7 @@ if __name__ == "__main__":
 		print('================================')
 		print('-d: display the last iteration of CML')
 		print('-mat <type> <matlen>: initial condition type(random, gaussian or bessel), matlen(>0)')
-		print('-map <map> <parameter>: type of map(logistic, som, doubling), parameter is required for logistic OR ts to insert a time series, followed by the file containing the time series in a .csv file, with: ((initial condition number * initial condition number) * number of iterations * 5)')
+		print('-map <map> <parameter>: type of map(logistic, som, doubling), parameter is required for logistic')
 		print('-nit <nit>: number of iterations')
 		print('-grad <x> <y>: save the gradient from x, y in gradientSeries.csv')
 		print('-c coupling: coupling factor(float)')
@@ -75,7 +75,7 @@ if __name__ == "__main__":
 		print('================================')
 		exit()
 	
-	initialMat,matLen,nit,mapping,coupling,neigh,output,nlyap = 'gaussian',128,50,'logistic',0.5,[(1,0),(0,1),(-1,0),(0,-1)],False, 100
+	#initialMat,matLen,nit,mapping,coupling,neigh,output,nlyap = 'gaussian',128,50,'logistic',0.5,[(1,0),(0,1),(-1,0),(0,-1)],False, 100
 	extraArg = 4.0
 	for it in range(len(sys.argv)):
 		if(sys.argv[it] == '-mat'):
@@ -134,43 +134,46 @@ if __name__ == "__main__":
 			plot(c.mat)
 			plt.savefig('output/it'+str(i)+'.png')
 		if ('-csv' in sys.argv):
-			np.savetxt('output/it'+str(i)+'.csv', c.mat)
+			with open("output/it"+str(i)+".csv", "ab") as f:
+    				f.write(b"\n")
+    				np.savetxt(f, c.mat)
+			#np.savetxt('output/it'+str(i)+'.csv', c.mat)
 		if ('-grad' in sys.argv):
 			mod, phase = c.getGradient(x,y)
 			grad.append([mod,phase])
 			np.savetxt('output/gradientSeries.csv',grad,header='mod,phase',comments='',delimiter=',')
 		c.getCML(neigh,mapCML,coupling,par)
 	
-		if('-lyap' in sys.argv) and (mapping == 'logistic'):
-			if i > nit-nlyap:
-				print("Lyap", i)
-				jac = c.getJacobian(maps.dlogisticMap,coupling,par)
-				try:
-					vals,vecs = eigs(jac,k=1,which='LR')
-					if (np.fabs(np.real(vals))>1e-6) :
-						localL1 = np.log(np.fabs(np.real(vals)))
-						csumL.append(localL1[0])
-				except ArpackError:
-					lixo = i 
-					
-				try:
-					vals,vecs = eigs(jac,k=1,which='SR')
-					if (np.fabs(np.real(vals))>1e-6) :
-						localL2 = np.log(np.fabs(np.real(vals)))
-						csumS.append(localL2[0])
-				except ArpackError:
-					lixo = i 
-					
-				try:
-					vals,vecs = eigs(jac,k=1,which='LM')
-					if (np.fabs(np.real(vals))>1e-6) :
-						localLM = np.log(np.fabs(np.real(vals)))
-						csumM.append(localLM[0])
-				except ArpackError:
-					lixo = i 
-					
-				ll,ls,lm = np.mean(csumL),np.mean(csumS), np.mean(csumM)
-				print("Lyapunov (L,S,M)",round(ll,3),round(ls,3),round(lm,3))
+		#if('-lyap' in sys.argv) and (mapping == 'logistic'):
+		#	if i > nit-nlyap:
+		#		print("Lyap", i)
+		#		jac = c.getJacobian(maps.dlogisticMap,coupling,par)
+		#		try:
+		#			vals,vecs = eigs(jac,k=1,which='LR')
+		#			if (np.fabs(np.real(vals))>1e-6) :
+		#				localL1 = np.log(np.fabs(np.real(vals)))
+		#				csumL.append(localL1[0])
+		#		except ArpackError:
+		#			lixo = i 
+		#			
+		#		try:
+		#			vals,vecs = eigs(jac,k=1,which='SR')
+		#			if (np.fabs(np.real(vals))>1e-6) :
+		#				localL2 = np.log(np.fabs(np.real(vals)))
+		#				csumS.append(localL2[0])
+		#		except ArpackError:
+		#			lixo = i 
+		#			
+		#		try:
+		#			vals,vecs = eigs(jac,k=1,which='LM')
+		#			if (np.fabs(np.real(vals))>1e-6) :
+		#				localLM = np.log(np.fabs(np.real(vals)))
+		#				csumM.append(localLM[0])
+		#		except ArpackError:
+		#			lixo = i 
+		#			
+		#		ll,ls,lm = np.mean(csumL),np.mean(csumS), np.mean(csumM)
+		#		print("Lyapunov (L,S,M)",round(ll,3),round(ls,3),round(lm,3))
 			
 	
 	if ('-d' in sys.argv):
