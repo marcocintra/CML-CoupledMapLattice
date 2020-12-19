@@ -134,9 +134,9 @@ if __name__ == "__main__":
 			plot(c.mat)
 			plt.savefig('output/it'+str(i)+'.png')
 		if ('-csv' in sys.argv):
-			with open("output/it"+str(i)+".csv", "ab") as f:
-    				f.write(b"\n")
-    				np.savetxt(f, c.mat)
+			f = open('file.csv', 'a')
+			np.savetxt(f, c.mat)
+			f.write("\n")    				
 			#np.savetxt('output/it'+str(i)+'.csv', c.mat)
 		if ('-grad' in sys.argv):
 			mod, phase = c.getGradient(x,y)
