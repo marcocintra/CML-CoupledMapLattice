@@ -12,16 +12,6 @@ def logisticMap(x, par):
         a = par[0]
     else:
         a = 4.0
-    #global cont
-    #print("par:")
-    #print(par)
-    #print("cont:")
-    #print(cont)
-    #cont = cont + 1
-    #print("(a * x * (1.0 - x)):")
-    #print((a * x * (1.0 - x)))
-    #print("type:")
-    #print(type((a * x * (1.0 - x))))
     return (a * x * (1.0 - x))
     
 def kanekoMap(x, par):
@@ -70,14 +60,3 @@ def onebyfMap(x, par):
     #print(y[0])
     #cont = cont + 1
     return y[0]
-
-def ts(x, par):
-    #global cont
-    #cont = cont + 1
-    #print("cont:")
-    #print(cont)
-    #print("estou na função ts, em maps.py. vamos ver se recebi as linhas como parâmetro certinho. par[cont]:")
-    #print(par[cont])
-    #print("type:")
-    #print(type(par[cont]))
-    return par[cont] 
