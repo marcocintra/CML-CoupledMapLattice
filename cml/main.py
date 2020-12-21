@@ -37,21 +37,6 @@ def setMap(mapping):
 		par = sys.argv[-1]
 		#print("recebi o parâmetro certinho?:")
 		#print(par)
-	#elif(mapping=='ts'):
-	#	cmlMap = maps.ts
-	#	#print("recebi o parâmetro do 'ts' certinho?:")
-	#	inicial = int(sys.argv[4])
-	#	inter = int(sys.argv[7])
-	#	num = inicial**2*inter*5
-	#	print("num:")
-	#	print(num)
-	#	par = np.genfromtxt(sys.argv[-1])
-	#	#print("estou em main.py. li as linhas do 'ts' certinho?:")
-	#	#print(par)
-	#	if(len(par) != num):
-	#		raise Exception('Série temporal inserida não possui número de pontos suficientes de acordo com a configuração realizada', mapping)
-	#else:
-	#	raise Exception('Unsupported map',mapping)
 	return cmlMap, par
 
 if __name__ == "__main__":
@@ -134,10 +119,9 @@ if __name__ == "__main__":
 			plot(c.mat)
 			plt.savefig('output/it'+str(i)+'.png')
 		if ('-csv' in sys.argv):
-			f = open('file.csv', 'a')
-			np.savetxt(f, c.mat)
-			f.write("\n")    				
-			#np.savetxt('output/it'+str(i)+'.csv', c.mat)
+			f = open('matrixfile.csv', 'a')
+			np.savetxt('output/csv/', c.mat)
+			f.write("\n")    							
 		if ('-grad' in sys.argv):
 			mod, phase = c.getGradient(x,y)
 			grad.append([mod,phase])
