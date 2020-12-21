@@ -39,4 +39,4 @@ Command | Arguments description
 Outputs:
 
 
-![mapExampleIt19](/cml/output/it19.png)
+![mapExampleIt19](/cml/output/images/examples/it19.png)
