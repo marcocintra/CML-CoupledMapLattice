@@ -115,7 +115,7 @@ if __name__ == "__main__":
 	for i in range(nit):
 		if ('-o' in sys.argv):
 			plot(c.mat)
-			plt.savefig('output/images'+str(i)+'.png')
+			plt.savefig('output/images/it'+str(i)+'.png')
 		if ('-csv' in sys.argv):
 			f = open('output/csv/matrixfile.csv', 'a')
 			np.savetxt('output/csv/matrixfile.csv', c.mat)
