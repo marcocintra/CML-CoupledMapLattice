@@ -1,4 +1,5 @@
 import colorednoise as cn
+import numpy as np
 cont = -1
 
 def doublingMap(x,par):
@@ -46,17 +47,8 @@ def somMap(x, par):
     else:
         return (1.0 - x) / b
     
-def onebyfMap(x, par):
-    par = int(par)
-    y = cn.powerlaw_psd_gaussian(par, 2)
-    #global cont
-    #print("x:")
-    #print(x)
-    #print("par:")
-    #print(par)
-    #print("cont:")
-    #print(cont)
-    #print("y[0]:")
-    #print(y[0])
-    #cont = cont + 1
-    return y[0]
+def onebyfMap(beta, u):
+    temp = cn.powerlaw_psd_gaussian(beta, (u.shape[0], u.shape[1]))
+    temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + u
+    temp = (temp - np.min(temp))/np.ptp(temp)
+    return temp
