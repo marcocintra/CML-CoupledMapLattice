@@ -112,17 +112,14 @@ if __name__ == "__main__":
 	csumL = []
 	csumS = []
 	csumM = []
-	f = open('matrixfile.csv', 'a')
 	for i in range(nit):
 		if ('-o' in sys.argv):
 			plot(c.mat)
 			plt.savefig('output/images/it'+str(i)+'.png')
 		if ('-csv' in sys.argv):
-			np.savetxt(f, c.mat)
-			f.write("\n")			
-			#with open('output/csv/matrixfile.csv', 'a') as f:
-    			#	f.write("\n")
-    			#	np.savetxt(f, c.mat)			
+			with open('output/csv/matrixfile.csv', 'a') as f:
+    				f.write("\n")
+    				np.savetxt(f, c.mat)			
 		if ('-grad' in sys.argv):
 			mod, phase = c.getGradient(x,y)
 			grad.append([mod,phase])
@@ -158,8 +155,7 @@ if __name__ == "__main__":
 		#			lixo = i 
 		#			
 		#		ll,ls,lm = np.mean(csumL),np.mean(csumS), np.mean(csumM)
-		#		print("Lyapunov (L,S,M)",round(ll,3),round(ls,3),round(lm,3))
-	f.close()
+		#		print("Lyapunov (L,S,M)",round(ll,3),round(ls,3),round(lm,3))	
 	if ('-d' in sys.argv):
 		plt.figure()
 		plot(c.mat)
