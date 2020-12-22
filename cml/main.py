@@ -117,7 +117,6 @@ if __name__ == "__main__":
 			plot(c.mat)
 			plt.savefig('output/images/it'+str(i)+'.png')
 		if ('-csv' in sys.argv):
-			f = open('output/csv/matrixfile.csv', 'a')
 			np.savetxt('output/csv/matrixfile.csv', c.mat)
 			f.write("\n")    							
 		if ('-grad' in sys.argv):
