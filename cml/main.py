@@ -33,7 +33,7 @@ def setMap(mapping):
 		cmlMap = maps.somMap
 		par = [0.6,0.2]
 	elif(mapping=='onebyf'):
-		cmlMap = maps.onebyfMap
+	        cmlMap = maps.onebyfMap
 		par = sys.argv[-1]		
 	return cmlMap, par
 
