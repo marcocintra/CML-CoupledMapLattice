@@ -118,12 +118,9 @@ if __name__ == "__main__":
                         plt.savefig('output/images/it'+str(i)+'.png')
                 if ('-csv' in sys.argv):
                         with open('output/csv/matrixfile.csv', 'a') as f:
-                                np.savetxt(f, c.mat, newline='\n\n')
-                                #if(i!=nit-1):
-                                #       #print("\n dentro " + str(i))
-                                #       f.write("\n dentro " + str(i))
-                                #else:
-                                #       f.write("\n fora " + str(i))
+                                np.savetxt(f, c.mat)
+                                if(i!=nit-1):
+                                       print('*********************************')                                
                 if ('-grad' in sys.argv):
                         mod, phase = c.getGradient(x,y)
                         grad.append([mod,phase])
