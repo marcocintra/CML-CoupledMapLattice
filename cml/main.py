@@ -122,7 +122,8 @@ if __name__ == "__main__":
                                 if(i!=nit-1):
                                         print("dentro " + str(i))
                                         f.write("\n")
-                                print("fora " + str(i))
+                                else:
+                                        print("fora " + str(i))
                 if ('-grad' in sys.argv):
                         mod, phase = c.getGradient(x,y)
                         grad.append([mod,phase])
