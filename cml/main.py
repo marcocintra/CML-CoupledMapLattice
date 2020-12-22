@@ -86,16 +86,10 @@ if __name__ == "__main__":
                                 coupling=round(float(sys.argv[it+1]),5)
                         else:
                                 raise Exception('Wrong Syntax','-c')
-                elif(sys.argv[it] == '-lyap'):
-                        if(it+1 < len(sys.argv)):
-                                nlyap=float(sys.argv[it+1])
-                        else:
-                                raise Exception('Wrong Syntax','-lyap')
-
-
+                
         mapCML,par=setMap(mapping)
         grad = []
-        if(initialMat=='gaussian') or (initialMat=='bessel') or (initialMat=='random'):
+        if(initialMat=='gaussian') or (initialMat=='random'):
                 c = CML.CML(initialMat,matLen)
         else:
                 raise Exception('Unknown matrix type')
