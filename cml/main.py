@@ -118,7 +118,7 @@ if __name__ == "__main__":
                         plt.savefig('output/images/it'+str(i)+'.png')
                 if ('-csv' in sys.argv):
                         with open('output/csv/matrixfile.csv', 'a') as f:
-                                np.savetxt(f, c.mat, newline='\n')
+                                np.savetxt(f, c.mat, newline='\n\n')
                                 #if(i!=nit-1):
                                 #       #print("\n dentro " + str(i))
                                 #       f.write("\n dentro " + str(i))
