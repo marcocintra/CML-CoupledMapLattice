@@ -20,18 +20,9 @@ def plot2(mat):
 
 
 def setMap(mapping):
-        if(mapping=='kaneko'):
-                cmlMap = maps.kanekoMap
-                par = [extraArg]
-        elif(mapping=='logistic'):
+        if(mapping=='logistic'):
                 cmlMap = maps.logisticMap
                 par = [extraArg]
-        elif(mapping=='doubling'):
-                cmlMap = maps.doublingMap
-                par = []
-        elif(mapping=='SOM'):
-                cmlMap = maps.somMap
-                par = [0.6,0.2]
         elif(mapping=='onebyf'):
                 cmlMap = maps.onebyfMap
                 par = sys.argv[-1]
@@ -126,37 +117,7 @@ if __name__ == "__main__":
                         grad.append([mod,phase])
                         np.savetxt('output/gradientSeries.csv',grad,header='mod,phase',comments='',delimiter=',')
                 c.getCML(neigh,mapCML,coupling,par)
-        
-                #if('-lyap' in sys.argv) and (mapping == 'logistic'):
-                #       if i > nit-nlyap:
-                #               print("Lyap", i)
-                #               jac = c.getJacobian(maps.dlogisticMap,coupling,par)
-                #               try:
-                #                       vals,vecs = eigs(jac,k=1,which='LR')
-                #                       if (np.fabs(np.real(vals))>1e-6) :
-                #                               localL1 = np.log(np.fabs(np.real(vals)))
-                #                               csumL.append(localL1[0])
-                #               except ArpackError:
-                #                       lixo = i 
-                #                       
-                #               try:
-                #                       vals,vecs = eigs(jac,k=1,which='SR')
-                #                       if (np.fabs(np.real(vals))>1e-6) :
-                #                               localL2 = np.log(np.fabs(np.real(vals)))
-                #                               csumS.append(localL2[0])
-                #               except ArpackError:
-                #                       lixo = i 
-                #                       
-                #               try:
-                #                       vals,vecs = eigs(jac,k=1,which='LM')
-                #                       if (np.fabs(np.real(vals))>1e-6) :
-                #                               localLM = np.log(np.fabs(np.real(vals)))
-                #                               csumM.append(localLM[0])
-                #               except ArpackError:
-                #                       lixo = i 
-                #                       
-                #               ll,ls,lm = np.mean(csumL),np.mean(csumS), np.mean(csumM)
-                #               print("Lyapunov (L,S,M)",round(ll,3),round(ls,3),round(lm,3))   
+                        
         if ('-d' in sys.argv):
                 plt.figure()
                 plot(c.mat)
