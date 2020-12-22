@@ -119,7 +119,7 @@ if __name__ == "__main__":
                 if ('-csv' in sys.argv):
                         with open('output/csv/matrixfile.csv', 'a') as f:
                                 np.savetxt(f, c.mat)
-                                if(i!=nit-1):
+                                if(i!=nit):
                                         f.write("\n")
                 if ('-grad' in sys.argv):
                         mod, phase = c.getGradient(x,y)
