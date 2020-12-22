@@ -34,7 +34,7 @@ def setMap(mapping):
 		par = [0.6,0.2]
 	elif(mapping=='onebyf'):
 	        cmlMap = maps.onebyfMap
-		par = sys.argv[-1]		
+		par = sys.argv[-1]
 	return cmlMap, par
 
 if __name__ == "__main__":
@@ -118,7 +118,7 @@ if __name__ == "__main__":
 			plt.savefig('output/images/it'+str(i)+'.png')
 		if ('-csv' in sys.argv):
 			with open('output/csv/matrixfile.csv', 'a') as f:
-    			        np.savetxt(f, c.mat)	
+				np.savetxt(f, c.mat)
 				if(i!=nit-1):
 					f.write("\n")
 		if ('-grad' in sys.argv):
