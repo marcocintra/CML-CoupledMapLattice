@@ -112,17 +112,17 @@ if __name__ == "__main__":
 	csumL = []
 	csumS = []
 	csumM = []
+	f = open('matrixfile.csv', 'a')
 	for i in range(nit):
 		if ('-o' in sys.argv):
 			plot(c.mat)
 			plt.savefig('output/images/it'+str(i)+'.png')
 		if ('-csv' in sys.argv):
-			#with open('output/csv/matrixfile.csv', 'a') as f:
-    			#	f.write("\n")
-    			#	np.savetxt(f, c.mat)
-			f = open('matrixfile.csv', 'a')
 			np.savetxt(f, c.mat)
 			f.write("\n")			
+			#with open('output/csv/matrixfile.csv', 'a') as f:
+    			#	f.write("\n")
+    			#	np.savetxt(f, c.mat)			
 		if ('-grad' in sys.argv):
 			mod, phase = c.getGradient(x,y)
 			grad.append([mod,phase])
