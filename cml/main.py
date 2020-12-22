@@ -118,7 +118,7 @@ if __name__ == "__main__":
 			plt.savefig('output/images/it'+str(i)+'.png')
 		if ('-csv' in sys.argv):
 			np.savetxt('output/csv/matrixfile.csv', c.mat)
-			f.write("\n")    							
+			np.savetxt('output/csv/matrixfile.csv', "\n")										
 		if ('-grad' in sys.argv):
 			mod, phase = c.getGradient(x,y)
 			grad.append([mod,phase])
