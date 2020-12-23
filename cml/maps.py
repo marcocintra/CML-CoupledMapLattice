@@ -7,7 +7,9 @@ def logisticMap(x, par):
         a = par[0]
     else:
         a = 4.0
-    print ("o que é isso que tá no logistic? " + str((a * x * (1.0 - x))))
+    print ("o que é essa função que tá no logistic? " + str((a * x * (1.0 - x))))
+    print ("\n")
+    print ("o que é esse parametro x que tá no logistic? " + str(x))
     print ("\n")
     print (type((a * x * (1.0 - x))))
     print ("\n")
