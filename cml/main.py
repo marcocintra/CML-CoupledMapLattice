@@ -26,9 +26,9 @@ def setMap(mapping):
         elif(mapping=='onebyf'):
                 cmlMap = maps.onebyfMap
                 par = sys.argv[-1]
-                print("o par do onebyf é: " + par)
+                print("o par do onebyf é: " + str(par))
                 print("\n")
-                print("o cmlmap do onebyf é: " + cmlMap)
+                print("o cmlmap do onebyf é: " + str(cmlMap))
         return cmlMap, par
 
 if __name__ == "__main__":
