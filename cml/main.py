@@ -63,11 +63,7 @@ if __name__ == "__main__":
                                 if mapping=='logistic':
                                         extraArg = round(float(sys.argv[it+2]),5)
                                         if (extraArg>4.0) or (extraArg<0.0):
-                                                raise Exception('Wrong Syntax','-map')
-                                if mapping=='kaneko':
-                                        extraArg = float(sys.argv[it+2])
-                                        if (extraArg>4.0) or (extraArg<0.0):
-                                                raise Exception('Wrong Syntax','-map')
+                                                raise Exception('Wrong Syntax','-map')                                
                         else:
                                 raise Exception('Wrong Syntax','-map')
                 elif(sys.argv[it] == '-nit'):
