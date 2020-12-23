@@ -22,6 +22,7 @@ def plot2(mat):
 def setMap(mapping):
         if(mapping=='logistic'):
                 cmlMap = maps.logisticMap
+                print("!!!!! cmlmap no set map " + str(cmlMap))
                 par = [extraArg]
         elif(mapping=='onebyf'):
                 cmlMap = maps.onebyfMap
