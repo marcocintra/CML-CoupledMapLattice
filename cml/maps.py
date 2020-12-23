@@ -9,7 +9,7 @@ def logisticMap(x, par):
         a = 4.0
     print ("o que é isso que tá no logistic? " + str((a * x * (1.0 - x))))
     print ("\n")
-    print type((a * x * (1.0 - x))
+    print (type((a * x * (1.0 - x))))
     print ("\n")
     return (a * x * (1.0 - x))
   
@@ -19,6 +19,6 @@ def onebyfMap(u, beta):
     temp = (temp - np.min(temp))/np.ptp(temp)
     print ("o que é isso que tá no 1/f noise? " + str(temp))
     print ("\n")               
-    print type(temp)           
+    print (type(temp))
     print ("\n")               
     return temp
