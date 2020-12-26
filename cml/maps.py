@@ -28,4 +28,4 @@ def onebyfMap(x, beta):
     global cont
     print("contador no onebyfMap - "+str(cont))
     cont = cont + 1
-    return 1
+    return 1 + x
