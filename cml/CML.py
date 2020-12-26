@@ -84,9 +84,9 @@ class CML():
                 for i in range(rows):
                         for j in range(cols):
                                 if(function.__name__ == 'onebyfMap'):
-                                        outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters, np.shape(self.mat)[0],snapshot)
+                                        outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters, np.shape(self.mat),snapshot)
                                         for n in neighborhood:
-                                                outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters, np.shape(self.mat)[0],snapshot)
+                                                outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters, np.shape(self.mat),snapshot)
                                 else:
                                         outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters)  
                                         for n in neighborhood:
