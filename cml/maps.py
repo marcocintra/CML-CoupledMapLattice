@@ -15,7 +15,7 @@ def logisticMap(x, par):
     print ("\n")
     return (a * x * (1.0 - x))
   
-def onebyfMap(x, beta):
+def onebyfMap(x, beta, grid, snapcont):
     #temp = cn.powerlaw_psd_gaussian(beta, (u.shape[0], u.shape[1]))
     #temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + u
     #temp = (temp - np.min(temp))/np.ptp(temp)
@@ -30,6 +30,10 @@ def onebyfMap(x, beta):
     cont = cont + 1
     print("\n")
     print("parâmetro x: "+str(x))
+    print("\n")
+    print("grid: "+str(grid))
+    print("\n")
+    print("grid: "+str(snapcont))
     print("\n")
     print("\n")
     print("\n")
