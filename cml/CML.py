@@ -3,6 +3,8 @@ import numpy as np
 import math
 import random
 import scipy.sparse as sparse
+snapshot = 1
+
 
 class CML():
 	def __init__(self, initialMatrix,msize = -1):
@@ -74,6 +76,7 @@ class CML():
 		return math.sqrt(math.pow(dy,2.0)+math.pow(dx,2.0)),math.atan2(dy,dx)
 
 	def getCML(self, neighborhood,function, coupling,parameters=[]):
+		global snapshot
 		outputMat = [row[:] for row in self.mat]
 		rows = len(self.mat)
 		cols = len(self.mat[0])
@@ -82,6 +85,8 @@ class CML():
 				outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters)
 				for n in neighborhood:
 					outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters)
+		print("contador de snapshot no getCML: "+str(snapshot))
+		print("\n")
 		self.mat = outputMat
+		snapshot = snapshot + 1
 		return outputMat
-
