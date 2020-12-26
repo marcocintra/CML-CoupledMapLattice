@@ -17,9 +17,9 @@ def logisticMap(x, par):
   
 def onebyfMap(x, beta, grid, snapcont):
     beta = int(beta)
-    print(str(beta)
+    print(str(beta))
     print("\n")
-    print(str(type(beta))
+    print(str(type(beta)))
     #print("!!!!!! "+str(grid[0]))
     #if(snapcont == 1):
     #temp = cn.powerlaw_psd_gaussian(2, (2, 2))
