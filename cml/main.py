@@ -109,7 +109,7 @@ if __name__ == "__main__":
                         mod, phase = c.getGradient(x,y)
                         grad.append([mod,phase])
                         np.savetxt('output/gradientSeries.csv',grad,header='mod,phase',comments='',delimiter=',')
-                c.getCML(neigh,mapCML,coupling,par)
+                c.getCML(neigh,mapCML,coupling,par,nit)
                         
         if ('-d' in sys.argv):
                 plt.figure()
