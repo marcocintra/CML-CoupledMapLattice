@@ -77,6 +77,7 @@ class CML():
 
 	def getCML(self, neighborhood,function, coupling,parameters=[]):
 		global snapshot
+		print(str(function.__name__)) 
 		outputMat = [row[:] for row in self.mat]
 		rows = len(self.mat)
 		cols = len(self.mat[0])
