@@ -26,7 +26,7 @@ def onebyfMap(x, beta, grid, snapcont,nit):
                     temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + x
                     temp = (temp - np.min(temp))/np.ptp(temp)
                     newarr = temp.reshape(-1)
-                    print("newarr "+i+" "+str(newarr))
+                    print("newarr "+str(i)+" "+str(newarr))
                     print("\n")
             
     global cont
