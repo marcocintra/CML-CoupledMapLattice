@@ -15,7 +15,7 @@ def logisticMap(x, par):
     print ("\n")
     return (a * x * (1.0 - x))
   
-def onebyfMap(x, beta, grid, snapcont,nit):
+def onebyfMap(x, beta, grid, snapcont,nit,i):
     beta = int(beta)
     if(snapcont == 1):
             print("nit  "+str(nit))
