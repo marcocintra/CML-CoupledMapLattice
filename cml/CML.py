@@ -82,9 +82,9 @@ class CML():
 		cols = len(self.mat[0])
 		for i in range(rows):
 			for j in range(cols):
-				outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters)
+				outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters, self.mat.shape[0],snapshot)
 				for n in neighborhood:
-					outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters)
+					outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters, self.mat.shape[0],snapshot)
 		print("contador de snapshot no getCML: "+str(snapshot))
 		print("\n")
 		self.mat = outputMat
