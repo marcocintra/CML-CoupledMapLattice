@@ -65,10 +65,6 @@ class CML():
                 #np.savetxt("testeJac.txt",jac,fmt="%.6f")
                 return sparse.coo_matrix(jac)
 
-        def getCMLNeumann(self, mat,function, coupling,parameters=[]):
-                neighborhood = [(1,0),(0,1),(-1,0),(0,-1)]
-                return self.getCML(mat, neighborhood,function, coupling,parameters)
-        
         def getGradient(self, x, y):
                 rows,cols = len(self.mat),len(self.mat[0])
                 dy = float(self.mat[(y+1)%rows][x]-self.mat[(y-1+rows)%rows][x])/2.0
