@@ -36,7 +36,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     print("\n")
     print("grid: "+str(grid))
     print("\n")
-    print("snapcont: "+str(snapcont))
+    print("snapshot: "+str(snapshot))
     print("\n")
     print("\n")
     print("\n")
