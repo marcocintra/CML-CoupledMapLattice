@@ -22,7 +22,7 @@ def onebyfMap(x, beta, grid, snapcont,nit):
     print(str(type(beta)))
     #print("!!!!!! "+str(grid[0]))
     if(snapcont == 1):
-            print("nit  "+nit)
+            print("nit  "+str(nit))
             print("\n")
             snapshots = (grid[0]**2)*()*(5)
             temp = cn.powerlaw_psd_gaussian(beta, (grid[0], grid[1]))
