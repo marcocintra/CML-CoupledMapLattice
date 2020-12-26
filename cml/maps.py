@@ -15,20 +15,19 @@ def logisticMap(x, par):
     print ("\n")
     return (a * x * (1.0 - x))
   
-def onebyfMap(x, beta, grid, nit,i):
+def onebyfMap(x, beta, grid, nit,snapshot):
     beta = int(beta)
-    if(snapcont == 1):
-            print("nit  "+str(nit))
-            print("\n")
-            chamadas = (grid[0]**2)*(nit)*(5)
-            for j in range(chamadas):
-                    temp = cn.powerlaw_psd_gaussian(beta, (grid[0], grid[1]))
+    if(snapshot == 1):
+            #print("nit  "+str(nit))
+            #print("\n")
+            valores = (grid[0]**2)*(nit)*(5)
+            for i in range(valores/grid[0]**2):
+                    temp = cn.powerlaw_psd_gaussian(beta, (grid[0], grid[0]))
                     temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + x
                     temp = (temp - np.min(temp))/np.ptp(temp)
-                    newarr = temp.reshape(-1)
                     print("newarr "+str(i)+" "+str(newarr))
                     print("\n")
-            
+                    newarr = newarr + temp.reshape(-1)
     global cont
     print("contador no onebyfMap: "+str(cont))
     cont = cont + 1
