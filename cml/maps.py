@@ -24,7 +24,8 @@ def onebyfMap(x, beta):
     #print ("o que é isso que tá no 1/f noise? " + str(temp))
     #print ("\n")               
     #print (type(temp))
-    #print ("\n")               
+    #print ("\n")        
+    global cont
     print("contador no onebyfMap - "+str(cont))
     cont = cont + 1
     return 1
