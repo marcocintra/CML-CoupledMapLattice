@@ -26,6 +26,11 @@ def onebyfMap(x, beta):
     #print (type(temp))
     #print ("\n")        
     global cont
-    print("contador no onebyfMap - "+str(cont))
+    print("contador no onebyfMap: "+str(cont))
     cont = cont + 1
+    print("\n")
+    print("parâmetro x: "+str(x))
+    print("\n")
+    print("\n")
+    print("\n")
     return 1 + x
