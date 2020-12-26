@@ -21,11 +21,11 @@ def onebyfMap(x, beta, grid, snapcont):
     print("\n")
     print(str(type(beta)))
     #print("!!!!!! "+str(grid[0]))
-    #if(snapcont == 1):
-    #temp = cn.powerlaw_psd_gaussian(2, (2, 2))
-            #temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + x
-            #temp = (temp - np.min(temp))/np.ptp(temp)
-            #print("temp...cnapcont==1... "+str(temp))
+    if(snapcont == 1):
+    temp = cn.powerlaw_psd_gaussian(beta, (2, 2))
+            temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + x
+            temp = (temp - np.min(temp))/np.ptp(temp)
+            print("temp...cnapcont==1... "+str(temp))
     #print ("o que é esse u que tá no 1/f noise? " + str(u))
     #print ("\n")               
     #print ("o que é isso que tá no 1/f noise? " + str(temp))
