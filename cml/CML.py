@@ -71,7 +71,7 @@ class CML():
                 dx = float(self.mat[y][(x+1)%cols]-self.mat[y][(x-1+cols)%cols])/2.0
                 return math.sqrt(math.pow(dy,2.0)+math.pow(dx,2.0)),math.atan2(dy,dx)
 
-        def getCML(self, neighborhood,function, coupling,parameters=[],nit):
+        def getCML(self, neighborhood,function, coupling,nit,parameters=[]):
                 global snapshot
                 print(str(function.__name__)) 
                 outputMat = [row[:] for row in self.mat]
