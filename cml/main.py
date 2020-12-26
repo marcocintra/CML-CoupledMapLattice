@@ -22,14 +22,14 @@ def plot2(mat):
 def setMap(mapping):
         if(mapping=='logistic'):
                 cmlMap = maps.logisticMap
-                print("!!!!! cmlmap no set map " + str(cmlMap))
+                #print("!!!!! cmlmap no set map " + str(cmlMap))
                 par = [extraArg]
         elif(mapping=='onebyf'):
                 cmlMap = maps.onebyfMap
                 par = sys.argv[-1]
-                print("o par do onebyf é: " + str(par))
-                print("\n")
-                print("o cmlmap do onebyf é: " + str(cmlMap))
+                #print("o par do onebyf é: " + str(par))
+                #print("\n")
+                #print("o cmlmap do onebyf é: " + str(cmlMap))
         return cmlMap, par
 
 if __name__ == "__main__":
@@ -109,7 +109,7 @@ if __name__ == "__main__":
                         mod, phase = c.getGradient(x,y)
                         grad.append([mod,phase])
                         np.savetxt('output/gradientSeries.csv',grad,header='mod,phase',comments='',delimiter=',')
-                c.getCML(neigh,mapCML,coupling,par,nit)
+                c.getCML(neigh,mapCML,coupling,nit,par)
                         
         if ('-d' in sys.argv):
                 plt.figure()
