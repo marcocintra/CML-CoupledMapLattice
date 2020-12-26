@@ -15,13 +15,13 @@ def logisticMap(x, par):
     print ("\n")
     return (a * x * (1.0 - x))
   
-def onebyfMap(x, beta, grid, snapcont,nit,i):
+def onebyfMap(x, beta, grid, nit,i):
     beta = int(beta)
     if(snapcont == 1):
             print("nit  "+str(nit))
             print("\n")
             chamadas = (grid[0]**2)*(nit)*(5)
-            for i in range(chamadas):
+            for j in range(chamadas):
                     temp = cn.powerlaw_psd_gaussian(beta, (grid[0], grid[1]))
                     temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + x
                     temp = (temp - np.min(temp))/np.ptp(temp)
