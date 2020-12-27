@@ -39,7 +39,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     cont = cont + 1
     #if(cont==40):
     #       print("newarr "+str(noises))
-            print("\n")   
+    #       print("\n")   
     #print("\n")
     #print("parâmetro x: "+str(x))
     #print("\n")
