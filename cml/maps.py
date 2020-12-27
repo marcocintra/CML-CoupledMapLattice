@@ -17,7 +17,7 @@ def logisticMap(x, par):
   
 def onebyfMap(x, beta, grid, nit,snapshot):
     beta = int(beta)
-    if(snapshot == 1):
+    if(snapshot == 0):
             #print("nit  "+str(nit))
             #print("\n")
             valores = (grid[0]**2)*(nit)*(5)
