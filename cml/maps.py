@@ -25,18 +25,21 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("nit  "+str(nit))
             #print("\n")
             valores = (grid[0]**2)*(nit)*(5)
-            matrizes = int(valores/grid[0]**2)
-            print("matrizes "+str(matrizes))
-            print("\n")
-            for i in range(matrizes):
-                    temp = cn.powerlaw_psd_gaussian(beta, (grid[0], grid[0]))
-                    temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + x
-                    temp = (temp - np.min(temp))/np.ptp(temp)
-                    #print("newarr "+str(i)+" "+str(newarr))
-                    #print("\n")
-                    newarr = np.append(newarr,temp)
+            #matrizes = int(valores/grid[0]**2)
+            #print("matrizes "+str(matrizes))
+            #print("\n")
+            noises = cn.powerlaw_psd_gaussian(beta, valores)
+            noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
+            #for i in range(matrizes):
+            #       temp = cn.powerlaw_psd_gaussian(beta, valores)
+            #       temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + x
+            #       temp = (temp - np.min(temp))/np.ptp(temp)
+            #       #print("newarr "+str(i)+" "+str(newarr))
+            #       #print("\n")
+            #       newarr = np.append(newarr,temp)
     #print("snapshot "+str(snapshot))
     #print("\n")
+    noises[cont] = noises[cont]+x
     cont = cont + 1
     if(cont==40):
             print("newarr "+str(newarr))
