@@ -22,7 +22,10 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("\n")
             valores = (grid[0]**2)*(nit)*(5)
             newarr = np.empty((1))
-            for i in range(int(valores/grid[0]**2)):
+            matrizes = int(valores/grid[0]**2)
+            print("matrizes "+str(matrizes))
+            print("\n")
+            for i in range(matrizes):
                     temp = cn.powerlaw_psd_gaussian(beta, (grid[0], grid[0]))
                     temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + x
                     temp = (temp - np.min(temp))/np.ptp(temp)
