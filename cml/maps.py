@@ -1,19 +1,13 @@
 import colorednoise as cn
 import numpy as np
-cont = 1
-newarr = np.empty((1))
+cont = 0
+noises = np.empty((1))
 
 def logisticMap(x, par):
     if(len(par)>0):
         a = par[0]
     else:
         a = 4.0
-    print ("o que é essa função que tá no logistic? " + str((a * x * (1.0 - x))))
-    print ("\n")
-    print ("o que é esse parametro x que tá no logistic? " + str(x))
-    print ("\n")
-    print (type((a * x * (1.0 - x))))
-    print ("\n")
     return (a * x * (1.0 - x))
   
 def onebyfMap(x, beta, grid, nit,snapshot):
@@ -21,7 +15,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     global newarr
     print("contador no onebyfMap: "+str(cont))
     beta = int(beta)
-    if(cont == 1):
+    if(cont == 0):
             #print("nit  "+str(nit))
             #print("\n")
             valores = (grid[0]**2)*(nit)*(5)
@@ -40,9 +34,10 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #print("snapshot "+str(snapshot))
     #print("\n")
     noises[cont] = noises[cont]+x
+    noise = noises[cont]
     cont = cont + 1
     if(cont==40):
-            print("newarr "+str(newarr))
+            print("newarr "+str(noises))
             print("\n")   
     #print("\n")
     #print("parâmetro x: "+str(x))
@@ -53,4 +48,4 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #print("\n")
     #print("\n")
     #print("\n")
-    return 1 + x
+    return noise
