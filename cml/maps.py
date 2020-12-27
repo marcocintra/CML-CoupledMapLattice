@@ -33,10 +33,13 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     temp = (temp - np.min(temp))/np.ptp(temp)
                     print("newarr "+str(i)+" "+str(newarr))
                     print("\n")
-                    newarr = newarr + temp.reshape(-1)
+                    newarr = newarr.append(temp)
     #print("snapshot "+str(snapshot))
     #print("\n")
     cont = cont + 1
+    if(cont==40):
+            print("newarr "+str(newarr))
+            print("\n")   
     #print("\n")
     #print("parâmetro x: "+str(x))
     #print("\n")
