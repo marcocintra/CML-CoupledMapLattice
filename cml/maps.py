@@ -33,7 +33,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     temp = (temp - np.min(temp))/np.ptp(temp)
                     print("newarr "+str(i)+" "+str(newarr))
                     print("\n")
-                    newarr.append(temp)
+                    newarr = np.append(newarr,temp)
     #print("snapshot "+str(snapshot))
     #print("\n")
     cont = cont + 1
