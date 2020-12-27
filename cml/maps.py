@@ -19,25 +19,26 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("nit  "+str(nit))
             #print("\n")
             valores = (grid[0]**2)*(nit)*(5)
-            #matrizes = int(valores/grid[0]**2)
+            matrizes = int(valores/grid[0]**2)
             #print("matrizes "+str(matrizes))
             #print("\n")
             noises = cn.powerlaw_psd_gaussian(beta, valores)
             noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
-            #for i in range(matrizes):
-            #       temp = cn.powerlaw_psd_gaussian(beta, valores)
-            #       temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + x
-            #       temp = (temp - np.min(temp))/np.ptp(temp)
+            for i in range(matrizes):
+                    noises = cn.powerlaw_psd_gaussian(beta, (grid[0],grid[0]))                    
             #       #print("newarr "+str(i)+" "+str(newarr))
             #       #print("\n")
             #       newarr = np.append(newarr,temp)
+    print(noises)
+    print("\n")
+    print(noises.shape)
     #print("snapshot "+str(snapshot))
     #print("\n")
     noises[cont] = noises[cont]+x
     noise = noises[cont]
     cont = cont + 1
-    if(cont==40):
-            print("newarr "+str(noises))
+    #if(cont==40):
+    #       print("newarr "+str(noises))
             print("\n")   
     #print("\n")
     #print("parâmetro x: "+str(x))
