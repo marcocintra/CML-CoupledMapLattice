@@ -29,16 +29,18 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     print("newarr "+str(i)+" "+str(newarr))
                     print("\n")
                     newarr = newarr + temp.reshape(-1)
-    global cont
-    print("contador no onebyfMap: "+str(cont))
-    cont = cont + 1
+    print("snapshot "+str(snapshot))
     print("\n")
-    print("parâmetro x: "+str(x))
-    print("\n")
-    print("grid: "+str(grid))
-    print("\n")
-    print("snapshot: "+str(snapshot))
-    print("\n")
-    print("\n")
-    print("\n")
+    #global cont
+    #print("contador no onebyfMap: "+str(cont))
+    #cont = cont + 1
+    #print("\n")
+    #print("parâmetro x: "+str(x))
+    #print("\n")
+    #print("grid: "+str(grid))
+    #print("\n")
+    #print("snapshot: "+str(snapshot))
+    #print("\n")
+    #print("\n")
+    #print("\n")
     return 1 + x
