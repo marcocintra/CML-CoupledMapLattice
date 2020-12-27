@@ -1,6 +1,7 @@
 import colorednoise as cn
 import numpy as np
 cont = 1
+newarr = np.empty((1))
 
 def logisticMap(x, par):
     if(len(par)>0):
@@ -17,9 +18,9 @@ def logisticMap(x, par):
   
 def onebyfMap(x, beta, grid, nit,snapshot):
     global cont
+    global newarr
     print("contador no onebyfMap: "+str(cont))
     beta = int(beta)
-    newarr = np.empty((1))
     if(cont == 1):
             #print("nit  "+str(nit))
             #print("\n")
