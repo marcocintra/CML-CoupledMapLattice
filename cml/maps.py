@@ -19,11 +19,11 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     global cont
     print("contador no onebyfMap: "+str(cont))
     beta = int(beta)
+    newarr = np.empty((1))
     if(cont == 1):
             #print("nit  "+str(nit))
             #print("\n")
             valores = (grid[0]**2)*(nit)*(5)
-            newarr = np.empty((1))
             matrizes = int(valores/grid[0]**2)
             print("matrizes "+str(matrizes))
             print("\n")
