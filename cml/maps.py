@@ -16,6 +16,8 @@ def logisticMap(x, par):
     return (a * x * (1.0 - x))
   
 def onebyfMap(x, beta, grid, nit,snapshot):
+    global cont
+    print("contador no onebyfMap: "+str(cont))
     beta = int(beta)
     if(cont == 1):
             #print("nit  "+str(nit))
@@ -34,8 +36,6 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     newarr = newarr + temp.reshape(-1)
     #print("snapshot "+str(snapshot))
     #print("\n")
-    global cont
-    print("contador no onebyfMap: "+str(cont))
     cont = cont + 1
     #print("\n")
     #print("parâmetro x: "+str(x))
