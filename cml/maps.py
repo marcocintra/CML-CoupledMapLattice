@@ -23,20 +23,20 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             valores = (grid[0]**2)*(nit)*(5)
             newarr = np.empty((1))
             matrizes = int(valores/grid[0]**2)
-            print("matrizes "+str(matrizes))
-            print("\n")
+            #print("matrizes "+str(matrizes))
+            #print("\n")
             for i in range(matrizes):
                     temp = cn.powerlaw_psd_gaussian(beta, (grid[0], grid[0]))
                     temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + x
                     temp = (temp - np.min(temp))/np.ptp(temp)
-                    print("newarr "+str(i)+" "+str(newarr))
-                    print("\n")
+                    #print("newarr "+str(i)+" "+str(newarr))
+                    #print("\n")
                     newarr = newarr + temp.reshape(-1)
-    print("snapshot "+str(snapshot))
-    print("\n")
-    #global cont
-    #print("contador no onebyfMap: "+str(cont))
-    #cont = cont + 1
+    #print("snapshot "+str(snapshot))
+    #print("\n")
+    global cont
+    print("contador no onebyfMap: "+str(cont))
+    cont = cont + 1
     #print("\n")
     #print("parâmetro x: "+str(x))
     #print("\n")
