@@ -32,9 +32,9 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     temp = cn.powerlaw_psd_gaussian(beta, (grid[0], grid[0]))
                     temp = ((temp - np.min(temp))/np.ptp(temp)) * 0.1 + x
                     temp = (temp - np.min(temp))/np.ptp(temp)
-                    print("newarr "+str(i)+" "+str(newarr))
-                    print("\n")
-                    np.append(newarr,temp)
+                    #print("newarr "+str(i)+" "+str(newarr))
+                    #print("\n")
+                    newarr = np.append(newarr,temp)
     #print("snapshot "+str(snapshot))
     #print("\n")
     cont = cont + 1
