@@ -25,7 +25,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("\n")
             #noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
             for i in range(nit):
-                    noises[i] = cn.powerlaw_psd_gaussian(beta, valores/nit)                    
+                    noises[i] = cn.powerlaw_psd_gaussian(beta, int(valores/nit))                    
             #       #print("newarr "+str(i)+" "+str(newarr))
             #       #print("\n")
             #       newarr = np.append(newarr,temp)
