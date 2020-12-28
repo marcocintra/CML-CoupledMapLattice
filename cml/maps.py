@@ -41,7 +41,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #       newarr = np.append(newarr,temp)
     print(matrixnoises)
     print("\n")
-    print(matrixnoises.shape)
+    print(np.shape(matrixnoises))
     print("\n")
     #print("snapshot "+str(snapshot))
     #print("\n")
