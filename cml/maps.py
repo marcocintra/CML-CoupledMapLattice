@@ -1,17 +1,8 @@
 import colorednoise as cn
 import numpy as np
-from random import seed
-from pandas import Series
-import pandas as pd
-from pandas.plotting import autocorrelation_plot
-import matplotlib.pyplot as plt
 cont = 0
 noises = np.array([])
 matrixnoises = np.array([])
-#noises = np.empty((1))
-#matrixnoises = np.empty((1))
-
-
 
 def logisticMap(x, par):
     if(len(par)>0):
@@ -61,8 +52,10 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("\n")
             for i in range(nit):
                     #np.array([1, 2, 3])
+                    if (nit==0):
+                            matrixnoises = np.array([], dtype=np.int64).reshape(0,valoresporit)
                     noises = cn.powerlaw_psd_gaussian(beta, valoresporit)
-                    #print(type(cn.powerlaw_psd_gaussian(beta, valoresporit)))
+                    #print(type(noises)
                     matrixnoises = np.vstack((matrixnoises,noises)) 
                     #print("noises" + str(noises))
                     #print("\n")
