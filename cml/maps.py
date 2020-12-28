@@ -1,8 +1,11 @@
 import colorednoise as cn
 import numpy as np
+from random import seed
+from pandas import Series
+from pandas.plotting import autocorrelation_plot
 cont = 0
 noises = np.empty((1))
- 
+
 
 def logisticMap(x, par):
     if(len(par)>0):
@@ -14,31 +17,38 @@ def logisticMap(x, par):
 def onebyfMap(x, beta, grid, nit,snapshot):
     global cont
     global noises
-    print("contador no onebyfMap: "+str(cont))
+    #print("contador no onebyfMap: "+str(cont))
     beta = int(beta)
     if(cont == 0):
             #print("cont  "+str(cont))
             #print("\n")
             valores = (grid[0]**2)*(nit)*(5)
-            print("valores  "+str(valores))
-            print("\n")
+            #print("valores  "+str(valores))
+            #print("\n")
             matrizes = int(valores/grid[0]**2)
-            print("matrizes "+str(matrizes))
-            print("\n")
+            #print("matrizes "+str(matrizes))
+            #print("\n")
             valoresporit = int(valores/nit)
-            print("valores por iteração "+str(valoresporit))
-            print("\n")
+            #print("valores por iteração "+str(valoresporit))
+            #print("\n")
             #noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
             #matrixnoises = [[0 for x in range()] for y in range(nit)] 
             matrixnoises = []
             noises = cn.powerlaw_psd_gaussian(beta, (nit,valoresporit))  
-            print("noises")
+            # seed random number generator
+            #seed(1)
+            # create white noise series
+            #series = [gauss(0.0, 1.0) for i in range(1000)]
+            noises = Series(noises)
+            print(series.describe())
             print("\n")
-            print(noises)
-            print("shape noises")
-            print("\n")
-            print(np.shape(noises))
-            print("\n")
+            #print("noises")
+            #print("\n")
+            #print(noises)
+            #print("shape noises")
+            #print("\n")
+            #print(np.shape(noises))
+            #print("\n")
             '''
             for i in range(nit):
                     noises = cn.powerlaw_psd_gaussian(beta, valoresporit)  
