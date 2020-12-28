@@ -4,6 +4,7 @@ from random import seed
 from pandas import Series
 import pandas as pd
 from pandas.plotting import autocorrelation_plot
+import matplotlib.pyplot as pyplot
 cont = 0
 noises = np.empty((1))
 
