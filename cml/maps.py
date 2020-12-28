@@ -52,7 +52,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("\n")
             for i in range(nit):
                     #np.array([1, 2, 3])
-                    if (nit==0):
+                    if (cont==0):
                             matrixnoises = np.array([], dtype=np.int64).reshape(0,valoresporit)
                     else:
                             noises = cn.powerlaw_psd_gaussian(beta, valoresporit)
