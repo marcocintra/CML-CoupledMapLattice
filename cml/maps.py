@@ -46,6 +46,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             print("\n")
             s.plot()
             pyplot.show()
+            pyplot.savefig('foo.png')
             #print("noises")
             #print("\n")
             #print(noises)
