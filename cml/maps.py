@@ -25,7 +25,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     valores = (grid[0]**2)*(nit)*(5)
     matrizes = int(valores/grid[0]**2)
     valoresporit = int(valores/nit)
-    noises = np.zeros(5)
+    noises = np.zeros(valoresporit)
+    matrixnoises = np.zeros(valoresporit)
     #print("contador no onebyfMap: "+str(cont))
     beta = int(beta)
     if(cont == 0):
