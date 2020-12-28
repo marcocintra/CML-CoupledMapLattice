@@ -31,29 +31,10 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("\n")
             #print("valores por iteração "+str(valoresporit))
             #print("\n")
-            #noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
-            #matrixnoises = [[0 for x in range()] for y in range(nit)] 
-            #matrixnoises = []
-            #noises = cn.powerlaw_psd_gaussian(beta, (nit,valoresporit))  
-            # seed random number generator
-            #seed(1)
-            # create white noise series
-            #series = [gauss(0.0, 1.0) for i in range(1000)]
-            #s = Series(noises[1])
-            #print(s.describe())
-            #print("\n")
-            #plt.plot(s)
-            #plt.savefig('foo.png')
-            #print("noises")
-            #print("\n")
-            #print(noises)
-            #print("shape noises")
-            #print("\n")
-            #print(np.shape(noises))
-            #print("\n")
             for i in range(nit):
-                    #np.array([1, 2, 3])
                     noises = cn.powerlaw_psd_gaussian(beta, valoresporit)
+                    noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1 + x
+                    noises = ((noises - np.min(noises))/np.ptp(noises))
                     print("noises" + str(noises))
                     print("\n")
                     print("type noises" + str(type(noises)))
@@ -66,17 +47,10 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     print("type matrixnoises" + str(type(matrixnoises)))
                     print("\n")  
                     print("shape matrixnoises" + str(np.shape(matrixnoises)))
-                    print("\n")
-                    #matriznoises = np.vstack((matrixnoises,noises))                   
-                    #print("newarr "+str(i)+" "+str(newarr))
-            #       #print("\n")
-            #       newarr = np.append(newarr,temp)
-    #print(np.shape(matrixnoises))
-    #print("\n")
+                    print("\n")                    
     #print("snapshot "+str(snapshot))
     #print("\n")
-    #noises[cont] = noises[cont]+x
-    #noise = noises[cont]
+    indice = cont
     cont = cont + 1
     #if(cont==40):
     #       print("newarr "+str(noises))
@@ -90,4 +64,4 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #print("\n")
     #print("\n")
     #print("\n")
-    return 1
+    return matrixnoises[indice]
