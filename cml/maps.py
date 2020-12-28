@@ -17,8 +17,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     print("contador no onebyfMap: "+str(cont))
     beta = int(beta)
     if(cont == 0):
-            print("nit  "+str(nit))
-            print("\n")
+            #print("cont  "+str(cont))
+            #print("\n")
             valores = (grid[0]**2)*(nit)*(5)
             print("valores  "+str(valores))
             print("\n")
@@ -36,7 +36,6 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             print("\n")
             print(np.shape(noises))
             print("\n")
-            '''
             for i in range(nit):
                     noises = cn.powerlaw_psd_gaussian(beta, valoresporit)  
                     row = []
@@ -55,7 +54,9 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #print("\n")
     #noises[cont] = noises[cont]+x
     #noise = noises[cont]
-    #cont = cont + 1
+    '''
+    cont = cont + 1
+    '''
     #if(cont==40):
     #       print("newarr "+str(noises))
     #       print("\n")   
@@ -68,4 +69,5 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #print("\n")
     #print("\n")
     #print("\n")
+    '''
     return 1
