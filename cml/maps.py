@@ -62,7 +62,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     noises = cn.powerlaw_psd_gaussian(beta, valoresporit)  
                     print("noises" + str(noises))
                     print("\n")
-                    np.vstack((matrixnoises,noises))                   
+                    matriznoises = np.vstack((matrixnoises,noises))                   
                     print("matrixnoises" + str(matrixnoises))
                     print("\n")
             #       #print("newarr "+str(i)+" "+str(newarr))
