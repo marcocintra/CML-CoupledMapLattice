@@ -21,6 +21,7 @@ def logisticMap(x, par):
 def onebyfMap(x, beta, grid, nit,snapshot):
     global cont
     global noises
+    global matrixnoises
     #print("contador no onebyfMap: "+str(cont))
     beta = int(beta)
     if(cont == 0):
