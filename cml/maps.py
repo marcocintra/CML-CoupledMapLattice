@@ -20,17 +20,21 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("nit  "+str(nit))
             #print("\n")
             valores = (grid[0]**2)*(nit)*(5)
+            print("valores  "+str(valores))
+            print("\n")
             matrizes = int(valores/grid[0]**2)
+            print("matrizes "+str(matrizes))
+            print("\n")
             valorespormatriz = int(valores/nit)
-            #print("matrizes "+str(matrizes))
-            #print("\n")
+            print("valor por matriz "+str(valorespormatriz))
+            print("\n")
             #noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
             matrixnoises = []
-            for i in range(nit):
-                    row = []
-                    for j in range(valorespormatriz):
-                            matrixnoises[nit][j].append(cn.powerlaw_psd_gaussian(beta, valorespormatriz))  
-                    matrixnoises.append(row)        
+            #for i in range(nit):
+            #       row = []
+            #       for j in range(valorespormatriz):
+            #               matrixnoises[nit][j].append(cn.powerlaw_psd_gaussian(beta, valorespormatriz))  
+            #       matrixnoises.append(row)        
             #       #print("newarr "+str(i)+" "+str(newarr))
             #       #print("\n")
             #       newarr = np.append(newarr,temp)
