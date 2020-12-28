@@ -43,6 +43,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             s = Series(noises[1])
             print(s.describe())
             print("\n")
+            s.plot()
+            pyplot.show()
             #print("noises")
             #print("\n")
             #print(noises)
