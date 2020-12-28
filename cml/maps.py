@@ -57,9 +57,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #print("\n")
     #noises[cont] = noises[cont]+x
     #noise = noises[cont]
-    '''
     cont = cont + 1
-    '''
     #if(cont==40):
     #       print("newarr "+str(noises))
     #       print("\n")   
