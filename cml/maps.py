@@ -39,8 +39,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #seed(1)
             # create white noise series
             #series = [gauss(0.0, 1.0) for i in range(1000)]
-            noises = Series(noises)
-            print(series.describe())
+            noises[1] = Series(noises[i])
+            print(series[1].describe())
             print("\n")
             #print("noises")
             #print("\n")
