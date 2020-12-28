@@ -7,6 +7,8 @@ from pandas.plotting import autocorrelation_plot
 import matplotlib.pyplot as plt
 cont = 0
 noises = np.empty((1))
+matrixnoises = np.empty((1))
+
 
 
 def logisticMap(x, par):
@@ -35,17 +37,17 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("\n")
             #noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
             #matrixnoises = [[0 for x in range()] for y in range(nit)] 
-            matrixnoises = []
-            noises = cn.powerlaw_psd_gaussian(beta, (nit,valoresporit))  
+            #matrixnoises = []
+            #noises = cn.powerlaw_psd_gaussian(beta, (nit,valoresporit))  
             # seed random number generator
             #seed(1)
             # create white noise series
             #series = [gauss(0.0, 1.0) for i in range(1000)]
-            s = Series(noises[1])
-            print(s.describe())
-            print("\n")
-            plt.plot(s)
-            plt.savefig('foo.png')
+            #s = Series(noises[1])
+            #print(s.describe())
+            #print("\n")
+            #plt.plot(s)
+            #plt.savefig('foo.png')
             #print("noises")
             #print("\n")
             #print(noises)
@@ -53,17 +55,12 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("\n")
             #print(np.shape(noises))
             #print("\n")
-            '''
             for i in range(nit):
                     noises = cn.powerlaw_psd_gaussian(beta, valoresporit)  
-                    row = []
-                    for j in range(valoresporit):
-                            matrixnoises[i][j] = noises[j]
-                    matrixnoises.append(row)        
+                    np.vstack((matrixnoises,noises))                   
             #       #print("newarr "+str(i)+" "+str(newarr))
             #       #print("\n")
             #       newarr = np.append(newarr,temp)
-            '''
     #print(matrixnoises)
     #print("\n")
     #print(np.shape(matrixnoises))
