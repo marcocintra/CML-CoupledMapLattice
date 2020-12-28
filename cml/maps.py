@@ -6,8 +6,8 @@ import pandas as pd
 from pandas.plotting import autocorrelation_plot
 import matplotlib.pyplot as plt
 cont = 0
-noises = np.empty((1))
-matrixnoises = np.empty((1))
+#noises = np.empty((1))
+#matrixnoises = np.empty((1))
 
 
 
@@ -20,20 +20,21 @@ def logisticMap(x, par):
   
 def onebyfMap(x, beta, grid, nit,snapshot):
     global cont
-    global noises
-    global matrixnoises
+    #global noises
+    #global matrixnoises
+    valores = (grid[0]**2)*(nit)*(5)
+    matrizes = int(valores/grid[0]**2)
+    valoresporit = int(valores/nit)
+    noises = np.zeros(5)
     #print("contador no onebyfMap: "+str(cont))
     beta = int(beta)
     if(cont == 0):
             #print("cont  "+str(cont))
             #print("\n")
-            valores = (grid[0]**2)*(nit)*(5)
             #print("valores  "+str(valores))
             #print("\n")
-            matrizes = int(valores/grid[0]**2)
             #print("matrizes "+str(matrizes))
             #print("\n")
-            valoresporit = int(valores/nit)
             #print("valores por iteração "+str(valoresporit))
             #print("\n")
             #noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
