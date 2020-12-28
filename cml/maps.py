@@ -2,6 +2,7 @@ import colorednoise as cn
 import numpy as np
 from random import seed
 from pandas import Series
+import pandas as pd
 from pandas.plotting import autocorrelation_plot
 cont = 0
 noises = np.empty((1))
@@ -39,8 +40,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #seed(1)
             # create white noise series
             #series = [gauss(0.0, 1.0) for i in range(1000)]
-            noises[1] = Series(noises[1])
-            print(noises[1].describe())
+            s = Series(noises[1])
+            print(s.describe())
             print("\n")
             #print("noises")
             #print("\n")
