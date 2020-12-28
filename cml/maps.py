@@ -2,7 +2,7 @@ import colorednoise as cn
 import numpy as np
 cont = 0
 noises = np.empty((1))
-matrixnoises = np.empty((2,2))
+ 
 
 def logisticMap(x, par):
     if(len(par)>0):
@@ -21,11 +21,16 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("\n")
             valores = (grid[0]**2)*(nit)*(5)
             matrizes = int(valores/grid[0]**2)
+            valorespormatriz = int(valores/nit)
             #print("matrizes "+str(matrizes))
             #print("\n")
             #noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
+            matrixnoises = []
             for i in range(nit):
-                    noises[i] = cn.powerlaw_psd_gaussian(beta, int(valores/nit))                    
+                    row = []
+                    for j in range(valorespormatriz):
+                            matrixnoises[nit][j] = cn.powerlaw_psd_gaussian(beta, valorespormatriz)  
+                    matrixnoises.append(row)        
             #       #print("newarr "+str(i)+" "+str(newarr))
             #       #print("\n")
             #       newarr = np.append(newarr,temp)
@@ -34,9 +39,9 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     print(noises.shape)
     #print("snapshot "+str(snapshot))
     #print("\n")
-    noises[cont] = noises[cont]+x
-    noise = noises[cont]
-    cont = cont + 1
+    #noises[cont] = noises[cont]+x
+    #noise = noises[cont]
+    #cont = cont + 1
     #if(cont==40):
     #       print("newarr "+str(noises))
     #       print("\n")   
@@ -49,4 +54,4 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #print("\n")
     #print("\n")
     #print("\n")
-    return noise
+    return 1
