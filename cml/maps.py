@@ -52,7 +52,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     print("\n")
     print("nit "+str(nit))
     print("\n")
-    if(cont==valoresporit):
+    if(cont==valoresporit-1):
             indice = 0
     else:
             indice = cont
