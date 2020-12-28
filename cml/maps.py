@@ -72,5 +72,4 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #print("\n")
     #print("\n")
     #print("\n")
-    '''
     return 1
