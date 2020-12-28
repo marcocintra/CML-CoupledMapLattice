@@ -20,7 +20,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     valoresporit = int(valores/nit)
     beta = int(beta)
     if(cont == 0):
-            matrixnoises = np.array([], dtype=np.int64).reshape(0,valoresporit)
+            matrixnoises = np.array([]).reshape(0,valoresporit)
             #print("cont  "+str(cont))
             #print("\n")
             #print("valores  "+str(valores))
