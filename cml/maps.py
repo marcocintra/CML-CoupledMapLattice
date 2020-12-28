@@ -61,7 +61,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print(np.shape(noises))
             #print("\n")
             for i in range(nit):
-                    matrixnoises = np.vstack(matrixnoises,cn.powerlaw_psd_gaussian(beta, valoresporit))  
+                    matrixnoises = np.vstack((matrixnoises,cn.powerlaw_psd_gaussian(beta, valoresporit))  
                     #print("noises" + str(noises))
                     #print("\n")
                     #matriznoises = np.vstack((matrixnoises,noises))                   
