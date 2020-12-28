@@ -29,14 +29,14 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             for i in range(nit):
                     row = []
                     for j in range(valorespormatriz):
-                            matrixnoises[nit][j] = cn.powerlaw_psd_gaussian(beta, valorespormatriz)  
+                            matrixnoises[nit][j].append(cn.powerlaw_psd_gaussian(beta, valorespormatriz))  
                     matrixnoises.append(row)        
             #       #print("newarr "+str(i)+" "+str(newarr))
             #       #print("\n")
             #       newarr = np.append(newarr,temp)
-    print(noises)
-    print("\n")
-    print(noises.shape)
+    #print(noises)
+    #print("\n")
+    #print(noises.shape)
     #print("snapshot "+str(snapshot))
     #print("\n")
     #noises[cont] = noises[cont]+x
