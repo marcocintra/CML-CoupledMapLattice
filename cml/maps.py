@@ -4,7 +4,7 @@ from random import seed
 from pandas import Series
 import pandas as pd
 from pandas.plotting import autocorrelation_plot
-import matplotlib.pyplot as pyplot
+import matplotlib.pyplot as plt
 cont = 0
 noises = np.empty((1))
 
@@ -44,9 +44,9 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             s = Series(noises[1])
             print(s.describe())
             print("\n")
-            s.plot()
-            pyplot.show()
-            pyplot.savefig('foo.png')
+            plt.plot(s)
+            plt.show()
+            plt.savefig('foo.png')
             #print("noises")
             #print("\n")
             #print(noises)
