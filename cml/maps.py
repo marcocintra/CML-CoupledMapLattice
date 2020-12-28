@@ -49,10 +49,10 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #       #print("\n")
             #       newarr = np.append(newarr,temp)
             '''
-    print(matrixnoises)
-    print("\n")
-    print(np.shape(matrixnoises))
-    print("\n")
+    #print(matrixnoises)
+    #print("\n")
+    #print(np.shape(matrixnoises))
+    #print("\n")
     #print("snapshot "+str(snapshot))
     #print("\n")
     #noises[cont] = noises[cont]+x
