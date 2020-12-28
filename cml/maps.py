@@ -18,8 +18,6 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     valores = (grid[0]**2)*(nit)*(5)
     matrizes = int(valores/grid[0]**2)
     valoresporit = int(valores/nit)
-    
-    #print("contador no onebyfMap: "+str(cont))
     beta = int(beta)
     if(cont == 0):
             matrixnoises = np.array([], dtype=np.int64).reshape(0,valoresporit)
@@ -48,20 +46,17 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     print("\n")  
                     print("shape matrixnoises" + str(np.shape(matrixnoises)))
                     print("\n")                    
-    #print("snapshot "+str(snapshot))
-    #print("\n")
+    print("contador no onebyfMap: "+str(cont))
+    print("\n")
+    print("snapshot "+str(snapshot))
+    print("\n")
+    print("nit "+str(nit))
+    print("\n")
     indice = cont
     cont = cont + 1
-    #if(cont==40):
-    #       print("newarr "+str(noises))
-    #       print("\n")   
     #print("\n")
     #print("parâmetro x: "+str(x))
     #print("\n")
     #print("grid: "+str(grid))
-    #print("\n")
-    #print("snapshot: "+str(snapshot))
-    #print("\n")
-    #print("\n")
-    #print("\n")
-    return matrixnoises[indice]
+    #print("\n")    
+    return matrixnoises[nit][indice]
