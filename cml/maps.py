@@ -59,4 +59,4 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #print("\n")
     #print("grid: "+str(grid))
     #print("\n")    
-    return matrixnoises[nit][indice]
+    return matrixnoises[snapshot][indice]
