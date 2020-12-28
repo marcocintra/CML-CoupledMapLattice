@@ -52,11 +52,14 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     print("\n")
     print("nit "+str(nit))
     print("\n")
-    indice = cont
+    if(cont==valoresporint)
+            indice = 0
+    else:
+            indice = cont
     cont = cont + 1
     #print("\n")
     #print("parâmetro x: "+str(x))
     #print("\n")
     #print("grid: "+str(grid))
-    #print("\n")    
+    #print("\n")        
     return matrixnoises[snapshot][indice]
