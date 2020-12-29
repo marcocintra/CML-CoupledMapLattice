@@ -31,8 +31,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("\n")
             for i in range(nit):
                     noises = cn.powerlaw_psd_gaussian(beta, valoresporit)
-                    noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1 + x
-                    noises = ((noises - np.min(noises))/np.ptp(noises))
+                    noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
                     print("noises" + str(noises))
                     print("\n")
                     print("type noises" + str(type(noises)))
@@ -59,4 +58,4 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #print("\n")
     #print("grid: "+str(grid))
     #print("\n")        
-    return matrixnoises[snapshot][indice]
+    return matrixnoises[snapshot][indice] + x
