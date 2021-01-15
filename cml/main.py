@@ -109,6 +109,7 @@ if __name__ == "__main__":
                         mod, phase = c.getGradient(x,y)
                         grad.append([mod,phase])
                         np.savetxt('output/gradientSeries.csv',grad,header='mod,phase',comments='',delimiter=',')
+                print("iterações "+str(i))
                 c.getCML(neigh,mapCML,coupling,nit,i,par)
                         
         if ('-d' in sys.argv):
