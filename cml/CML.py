@@ -72,7 +72,7 @@ class CML():
                 return math.sqrt(math.pow(dy,2.0)+math.pow(dx,2.0)),math.atan2(dy,dx)
 
         def getCML(self, neighborhood, function, coupling, nit, snapshot, parameters=[]):
-                #global snapshot
+                global snapshot
                 #print(str(function.__name__)) 
                 outputMat = [row[:] for row in self.mat]
                 rows = len(self.mat)
@@ -88,8 +88,8 @@ class CML():
                                         for n in neighborhood:
                                                 outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters)
                                 
-                #print("contador de snapshot no getCML: "+str(snapshot))
-                #print("\n")
+                print("contador de snapshot no getCML: "+str(snapshot))
+                print("\n")
                 self.mat = outputMat
-                #snapshot = snapshot + 1
+                snapshot = snapshot + 1
                 return outputMat
