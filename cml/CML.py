@@ -72,7 +72,6 @@ class CML():
                 return math.sqrt(math.pow(dy,2.0)+math.pow(dx,2.0)),math.atan2(dy,dx)
 
         def getCML(self, neighborhood, function, coupling, nit, snapshot, parameters=[]):
-                global snapshot
                 #print(str(function.__name__)) 
                 outputMat = [row[:] for row in self.mat]
                 rows = len(self.mat)
