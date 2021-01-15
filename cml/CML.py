@@ -3,7 +3,7 @@ import numpy as np
 import math
 import random
 import scipy.sparse as sparse
-snapshot = 1
+#snapshot = 1
 
 
 class CML():
@@ -87,8 +87,8 @@ class CML():
                                         for n in neighborhood:
                                                 outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters)
                                 
-                print("contador de snapshot no getCML: "+str(snapshot))
+                print("contador de iterações "+str(nit))
                 print("\n")
                 self.mat = outputMat
-                snapshot = snapshot + 1
+                #snapshot = snapshot + 1
                 return outputMat
