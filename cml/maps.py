@@ -1,4 +1,4 @@
-import colorednoise as cn
+#import colorednoise as cn
 import numpy as np
 import multiprocessing
 from concurrent import futures
@@ -102,8 +102,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     with open("matrixnoises_datasetnoise4.txt") as fp:
     for i, line in enumerate(fp):
         if(i==snapshot):
-            a = line.split()
+            a = line.split()[indice]
     #print(a[81919])
     #print(i)
-    return a[indice]
+    return a + x
     #return matrixnoises[snapshot][indice] + x
