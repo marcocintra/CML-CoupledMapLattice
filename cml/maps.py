@@ -83,8 +83,9 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     #print("type matrixnoises" + str(type(matrixnoises)))
                     #print("\n")  
                     #print("shape matrixnoises" + str(np.shape(matrixnoises)))
-                    #print("\n")                    
-    np.savetxt('matrixnoises.txt', matrixnoises)
+                    #print("\n")    
+                    if(i==nit-1):
+                        np.savetxt('matrixnoises.txt', matrixnoises)                      
     #print("contador no onebyfMap: "+str(cont))
     #print("\n")
     #print("snapshot "+str(snapshot))
