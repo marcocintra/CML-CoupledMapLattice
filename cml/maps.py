@@ -66,16 +66,16 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("\n")
             #print("valores por iteração "+str(valoresporit))
             #print("\n")
-            for i in range(nit):
-                    noises = cn.powerlaw_psd_gaussian(beta, valoresporit)
-                    noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
+            #for i in range(nit):
+                    #noises = cn.powerlaw_psd_gaussian(beta, valoresporit)
+                    #noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
                     #print("noises" + str(noises))
                     #print("\n")
                     #print("type noises" + str(type(noises)))
                     #print("\n")
                     #print("shape noises" + str(np.shape(noises)))
                     #print("\n")
-                    matrixnoises = np.vstack([matrixnoises,noises]) 
+                    #matrixnoises = np.vstack([matrixnoises,noises]) 
                     print("iteração "+str(i))
                     print("\n")
                     #print("matrixnoises" + str(matrixnoises))
@@ -84,8 +84,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     #print("\n")  
                     #print("shape matrixnoises" + str(np.shape(matrixnoises)))
                     #print("\n")    
-                    if(i==nit-1):
-                        np.savetxt('matrixnoises.txt', matrixnoises)                      
+                    #if(i==nit-1):
+                    #    np.savetxt('matrixnoises.txt', matrixnoises)                      
     #print("contador no onebyfMap: "+str(cont))
     #print("\n")
     #print("snapshot "+str(snapshot))
@@ -98,5 +98,6 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #print("parâmetro x: "+str(x))
     #print("\n")
     #print("grid: "+str(grid))
-    #print("\n")        
+    #print("\n")
+    #return np.loadtxt('matrixnoises_datasetnoise4.txt')[snapshot][indice] + x                      
     return matrixnoises[snapshot][indice] + x
