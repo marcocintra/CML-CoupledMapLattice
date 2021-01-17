@@ -41,6 +41,7 @@ def onebyfMap(x, beta, grid, nit, snapshot):
                 # Para um array com os ruídos de todos os snapshots
                 res = future.result()
                 matrixnoises = np.vstack([matrixnoises, res])
+                np.savetxt('matrixnoises.txt', matrixnoises)
                 print(f'#{future.sid} successfully generated!')
 
     indice = cont-(valoresporit*(snapshot+1))
