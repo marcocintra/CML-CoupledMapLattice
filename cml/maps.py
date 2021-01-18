@@ -14,8 +14,8 @@ def logisticMap(x, par):
         a = 4.0
     return (a * x * (1.0 - x))
 
-def work(beta, size):
-    return np.array(cn.powerlaw_psd_gaussian(beta, size))
+#def work(beta, size):
+#    return np.array(cn.powerlaw_psd_gaussian(beta, size))
 
 #def onebyfMap(x, beta, grid, nit, snapshot):
 #    global cont
@@ -56,8 +56,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     matrizes = int(valores/grid[0]**2)
     valoresporit = int(valores/nit)
     beta = int(beta)
-    if(cont == 0):
-            matrixnoises = np.array([]).reshape(0,valoresporit)
+    #if(cont == 0):
+    #       matrixnoises = np.array([]).reshape(0,valoresporit)
             #print("cont  "+str(cont))
             #print("\n")
             #print("valores  "+str(valores))
@@ -86,8 +86,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     #print("\n")    
                     #if(i==nit-1):
                     #    np.savetxt('matrixnoises.txt', matrixnoises)                      
-    #print("contador no onebyfMap: "+str(cont))
-    #print("\n")
+    print("contador no onebyfMap: "+str(cont))
+    print("\n")
     #print("snapshot "+str(snapshot))
     #print("\n")
     #print("nit "+str(nit))
@@ -105,5 +105,5 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                 a = line.split()[indice]
     #print(a[81919])
     #print(i)
-    return a + x
+    return 1
     #return matrixnoises[snapshot][indice] + x
