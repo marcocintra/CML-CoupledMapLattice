@@ -3,6 +3,7 @@ import numpy as np
 import math
 import random
 import scipy.sparse as sparse
+import numexpr as ne
 #snapshot = 1
 
 
@@ -79,9 +80,11 @@ class CML():
                 for i in range(rows):
                         for j in range(cols):
                                 if(function.__name__ == 'onebyfMap'):
-                                        outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters, np.shape(self.mat),nit,snapshot)
+                                        #outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters, np.shape(self.mat),nit,snapshot)
+                                        outputMat[i][j] = ne.evaluate("(1.0-coupling) * function(self.mat[i][j],parameters, np.shape(self.mat),nit,snapshot)")
                                         for n in neighborhood:
-                                                outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters, np.shape(self.mat),nit,snapshot)
+                                                #outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters, np.shape(self.mat),nit,snapshot)
+                                                outputMat[i][j] += ne.evaluate("(coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters, np.shape(self.mat),nit,snapshot)")
                                 else:
                                         outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters)  
                                         for n in neighborhood:
