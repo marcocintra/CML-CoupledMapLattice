@@ -74,21 +74,20 @@ class CML():
 
         def getCML(self, neighborhood, function, coupling, nit, snapshot, parameters=[]):
                 #print(str(function.__name__)) 
-                outputMat = [row[:] for row in self.mat]
-                rows = len(self.mat)
-                cols = len(self.mat[0])
-                for i in range(rows):
-                        for j in range(cols):
-                                if(function.__name__ == 'onebyfMap'):
-                                        #outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters, np.shape(self.mat),nit,snapshot)
-                                        outputMat[i][j] = ne.evaluate("(1.0-coupling) * function(mat[i][j],parameters, np.shape(mat),nit,snapshot)", local_dict=vars(self))
-                                        for n in neighborhood:
-                                                #outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters, np.shape(self.mat),nit,snapshot)
-                                                outputMat[i][j] += ne.evaluate("(coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters, np.shape(self.mat),nit,snapshot)")
-                                else:
-                                        outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters)  
-                                        for n in neighborhood:
-                                                outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters)
+                #outputMat = [row[:] for row in self.mat]
+                #rows = len(self.mat)
+                #cols = len(self.mat[0])
+                #for i in range(rows):
+                        #for j in range(cols):
+                mat_shape = rows, cols = self.mat.shape
+                if(function.__name__ == 'onebyfMap'):
+                        outputMat = (1.0-coupling) * function(self.mat, parameters, mat_shape, nit, snapshot)
+                        for ny, nx in neighbourhood:
+                                outputMat += (coupling/len(neighborhood)) * function(self.mat[np.roll(np.arange(rows), -nx), np.roll(np.arange(cols), -ny)], parameters, mat_shape, nit, snapshot)
+                else:
+                        outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters)  
+                        for n in neighborhood:
+                                outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters)
                                 
                 print("contador de iterações no getCML "+str(nit))
                 print("\n")
