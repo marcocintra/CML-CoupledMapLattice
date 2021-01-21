@@ -99,10 +99,10 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #print("\n")
     #print("grid: "+str(grid))
     #print("\n")
-    with open("matrixnoises_datasetnoise4.txt") as fp:
-        for i, line in enumerate(fp):
-            if(i==snapshot):
-                a = line.split()[indice]
+    #with open("matrixnoises_datasetnoise4.txt") as fp:
+    #    for i, line in enumerate(fp):
+    #        if(i==snapshot):
+    #            a = line.split()[indice]
     #print(a[81919])
     #print(i)
     return 1
