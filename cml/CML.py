@@ -79,7 +79,8 @@ class CML():
                 #cols = len(self.mat[0])
                 #for i in range(rows):
                         #for j in range(cols):
-                mat_shape = rows, cols = len(self.mat)
+                self.mat = np.asarray(self.mat)
+                mat_shape = rows, cols = self.mat.shape
                 if(function.__name__ == 'onebyfMap'):
                         outputMat = (1.0-coupling) * function(self.mat, parameters, mat_shape, nit, snapshot)
                         for ny, nx in neighbourhood:
