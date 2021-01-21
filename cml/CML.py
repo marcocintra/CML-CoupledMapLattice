@@ -83,7 +83,7 @@ class CML():
                 mat_shape = rows, cols = self.mat.shape
                 if(function.__name__ == 'onebyfMap'):
                         outputMat = (1.0-coupling) * function(self.mat, parameters, mat_shape, nit, snapshot)
-                        for ny, nx in neighbouhood:
+                        for ny, nx in neighborhood:
                                 outputMat += (coupling/len(neighborhood)) * function(self.mat[np.roll(np.arange(rows), -nx), np.roll(np.arange(cols), -ny)], parameters, mat_shape, nit, snapshot)
                 else:
                         outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters)  
