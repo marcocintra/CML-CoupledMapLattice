@@ -73,10 +73,10 @@ class CML():
                 return math.sqrt(math.pow(dy,2.0)+math.pow(dx,2.0)),math.atan2(dy,dx)
 
         def getCML(self, neighborhood, function, coupling, nit, snapshot, parameters=[]):
-                #self.mat = np.array(self.mat) # CÓDIGO VETORIAL
-                #mat_shape = rows, cols = self.mat.shape # CÓDIGO VETORIAL
-                outputMat = [row[:] for row in self.mat] 
-		rows = len(self.mat)
+        	#self.mat = np.array(self.mat) # CÓDIGO VETORIAL
+        	#mat_shape = rows, cols = self.mat.shape # CÓDIGO VETORIAL
+        	outputMat = [row[:] for row in self.mat] 
+        	rows = len(self.mat)
 		cols = len(self.mat[0])
                 for i in range(rows):
                         for j in range(cols):
