@@ -1,4 +1,4 @@
-#import colorednoise as cn
+import colorednoise as cn
 import numpy as np
 import multiprocessing
 from concurrent import futures
@@ -56,8 +56,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     matrizes = int(valores/grid[0]**2)
     valoresporit = int(valores/nit)
     beta = int(beta)
-    #if(cont == 0):
-    #       matrixnoises = np.array([]).reshape(0,valoresporit)
+    if(cont == 0):
+            matrixnoises = np.array([]).reshape(0,valoresporit)
             #print("cont  "+str(cont))
             #print("\n")
             #print("valores  "+str(valores))
@@ -66,8 +66,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
             #print("\n")
             #print("valores por iteração "+str(valoresporit))
             #print("\n")
-            #for i in range(nit):
-                    #noises = cn.powerlaw_psd_gaussian(beta, valoresporit)
+            for i in range(nit):
+                    noises = cn.powerlaw_psd_gaussian(beta, valoresporit)
                     #noises = ((noises - np.min(noises))/np.ptp(noises)) * 0.1
                     #print("noises" + str(noises))
                     #print("\n")
@@ -75,7 +75,7 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     #print("\n")
                     #print("shape noises" + str(np.shape(noises)))
                     #print("\n")
-                    #matrixnoises = np.vstack([matrixnoises,noises]) 
+                    matrixnoises = np.vstack([matrixnoises,noises]) 
                     #print("iteração "+str(i))
                     #print("\n")
                     #print("matrixnoises" + str(matrixnoises))
@@ -84,8 +84,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     #print("\n")  
                     #print("shape matrixnoises" + str(np.shape(matrixnoises)))
                     #print("\n")    
-                    #if(i==nit-1):
-                    #    np.savetxt('matrixnoises.txt', matrixnoises)                      
+                    if(i==nit-1):
+                        np.savetxt('matrixnoises.txt', matrixnoises)                      
     print("contador no onebyfMap: "+str(cont))
     print("\n")
     #print("snapshot "+str(snapshot))
@@ -105,5 +105,5 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     #            a = line.split()[indice]
     #print(a[81919])
     #print(i)
-    return 1
-    #return matrixnoises[snapshot][indice] + x
+    #return 1
+    return matrixnoises[snapshot][indice] + x
