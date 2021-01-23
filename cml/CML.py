@@ -80,11 +80,11 @@ class CML():
             for j in range(cols):
                 if(function.__name__ == 'onebyfMap'):
                     #outputMat = (1.0-coupling) * function(self.mat, parameters, mat_shape, nit, snapshot) # CÓDIGO VETORIAL
-                    outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j], parameters, mat_shape, nit, shapshot)  
+                    outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j], parameters, mat_shape, nit, snapshot)  
                     #for ny, nx in neighborhood: # CÓDIGO VETORIAL
                     for n in neighborhood:
                         #outputMat += (coupling/len(neighborhood)) * function(self.mat[np.roll(np.arange(rows), -nx), np.roll(np.arange(cols), -ny)], parameters, mat_shape, nit, snapshot) # CÓDIGO VETORIAL
-                        outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters, mat_shape, nit, shapshot)
+                        outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters, mat_shape, nit, snapshot)
                 else:
                     outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters)  
                     for n in neighborhood:
