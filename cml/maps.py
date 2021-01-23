@@ -52,8 +52,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     global cont
     global noises
     global matrixnoises
-    valores = (grid[0]**2)*(nit)*(5)
-    matrizes = int(valores/grid[0]**2)
+    valores = (grid**2)*(nit)*(5)
+    matrizes = int(valores/grid**2)
     valoresporit = int(valores/nit)
     beta = int(beta)
     if(cont == 0):
