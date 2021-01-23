@@ -73,10 +73,10 @@ class CML():
     def getCML(self, neighborhood, function, coupling, nit, snapshot, parameters=[]):
         #self.mat = np.array(self.mat) # CÓDIGO VETORIAL
         #mat_shape = rows, cols = self.mat.shape # CÓDIGO VETORIAL
-        #mat_shape = len(self.mat)
         outputMat = [row[:] for row in self.mat] 
         rows = len(self.mat)
         cols = len(self.mat[0])
+        mat_shape = len(self.mat)
         for i in range(rows):
             for j in range(cols):
                 if(function.__name__ == 'onebyfMap'):
