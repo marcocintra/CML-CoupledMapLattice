@@ -57,7 +57,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
     valoresporit = int(valores/nit)
     beta = int(beta)
     if(cont == 0):
-            matrixnoises = np.array([]).reshape(0,valoresporit)
+            # matrixnoises = np.array([]).reshape(0,valoresporit)
+            matrixnoises = []
             #print("cont  "+str(cont))
             #print("\n")
             #print("valores  "+str(valores))
@@ -75,7 +76,8 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     #print("\n")
                     #print("shape noises" + str(np.shape(noises)))
                     #print("\n")
-                    matrixnoises = np.vstack([matrixnoises,noises]) 
+                    #matrixnoises = np.vstack([matrixnoises,noises])
+                    matrixnoises.append(noises) 
                     #print("iteração "+str(i))
                     #print("\n")
                     #print("matrixnoises" + str(matrixnoises))
@@ -84,10 +86,12 @@ def onebyfMap(x, beta, grid, nit,snapshot):
                     #print("\n")  
                     #print("shape matrixnoises" + str(np.shape(matrixnoises)))
                     #print("\n")    
-                    if(i==nit-1):
-                        np.savetxt('matrixnoises.txt', matrixnoises)                      
-    print("contador no onebyfMap: "+str(cont))
-    print("\n")
+
+            matrixnoises = np.array(matrixnoises)
+            # if(i==nit-1):
+            #     np.savetxt('matrixnoises.txt', matrixnoises)                      
+    # print("contador no onebyfMap: "+str(cont))
+    # print("\n")
     #print("snapshot "+str(snapshot))
     #print("\n")
     #print("nit "+str(nit))
