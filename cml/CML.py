@@ -73,7 +73,7 @@ class CML():
     def getCML(self, neighborhood, function, coupling, nit, snapshot, parameters=[]):
         #self.mat = np.array(self.mat) # CÓDIGO VETORIAL
         #mat_shape = rows, cols = self.mat.shape # CÓDIGO VETORIAL
-        mat_shape = self.mat.shape
+        #mat_shape = len(self.mat)
         outputMat = [row[:] for row in self.mat] 
         rows = len(self.mat)
         cols = len(self.mat[0])
