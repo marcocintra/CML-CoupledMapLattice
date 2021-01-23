@@ -4,7 +4,6 @@ import math
 import random
 import scipy.sparse as sparse
 import numexpr as ne
-snapshot = 1
 
 
 class CML():
@@ -73,7 +72,6 @@ class CML():
     def getCML(self, neighborhood, function, coupling, nit, snapshot, parameters=[]):
         #self.mat = np.array(self.mat) # CÓDIGO VETORIAL
         #mat_shape = rows, cols = self.mat.shape # CÓDIGO VETORIAL
-        global snapshot
         outputMat = [row[:] for row in self.mat] 
         rows = len(self.mat)
         cols = len(self.mat[0])
