@@ -10,7 +10,7 @@ from matplotlib.colors import LogNorm
 
 def plot(mat):
         plt.clf()
-        plt.imshow(mat,cmap=plt.get_cmap('gray'),vmin=0.0,vmax=1.0)
+        plt.imshow(mat,cmap=plt.get_cmap('gray'))
         plt.colorbar()
 
 def plot2(mat):
@@ -22,14 +22,10 @@ def plot2(mat):
 def setMap(mapping):
         if(mapping=='logistic'):
                 cmlMap = maps.logisticMap
-                #print("!!!!! cmlmap no set map " + str(cmlMap))
                 par = [extraArg]
         elif(mapping=='onebyf'):
                 cmlMap = maps.onebyfMap
-                par = sys.argv[-1]
-                #print("o par do onebyf é: " + str(par))
-                #print("\n")
-                #print("o cmlmap do onebyf é: " + str(cmlMap))
+                par = sys.argv[-1]                
         return cmlMap, par
 
 if __name__ == "__main__":
