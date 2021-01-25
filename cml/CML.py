@@ -89,7 +89,7 @@ class CML():
                     outputMat[i][j] = (1.0-coupling) * function(self.mat[i][j],parameters)  
                     for n in neighborhood:
                         outputMat[i][j] += (coupling/float(len(neighborhood))) * function(self.mat[(i+n[1]+rows) % rows][(j+n[0]+cols) % cols],parameters)
-        outputMat = (outputMat - np.min(outputMat))/np.ptp(outputMat)
+        #outputMat = (outputMat - np.min(outputMat))/np.ptp(outputMat) # NORMALIZAÇÃO
         #print("contador de iterações no getCML "+str(nit))
         #print("\n")
         self.mat = outputMat
